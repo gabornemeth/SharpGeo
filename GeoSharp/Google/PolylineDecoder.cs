@@ -1,18 +1,21 @@
 ﻿// 
 // Base of this code is from:
 // http://www.codeproject.com/Tips/312248/Google-Maps-Direction-API-V-Polyline-Decoder
+// https://github.com/balb/csharp-polyline-encoder
+//
+// Documentation from Google
 // https://developers.google.com/maps/documentation/utilities/polylinealgorithm
 //
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GeoSharp
+namespace GeoSharp.Google
 {
     /// <summary>
     /// Polyline decoder for Google Maps API
     /// </summary>
-    public static class PolylineDecoder
+    public static class PolylineEncoder
     {
         private static int floor1e5(double coordinate)
         {
@@ -26,27 +29,25 @@ namespace GeoSharp
             {
                 sgn_num = ~(sgn_num);
             }
-            return (encodeNumber(sgn_num));
+            return (EncodeNumber(sgn_num));
         }
 
-        private static String encodeNumber(int num)
+        private static string EncodeNumber(int num)
         {
-
-            StringBuilder encodeString = new StringBuilder();
+            var encodedText = new StringBuilder();
 
             while (num >= 0x20)
             {
                 int nextValue = (0x20 | (num & 0x1f)) + 63;
-                encodeString.Append((char)(nextValue));
+                encodedText.Append((char)(nextValue));
                 num >>= 5;
             }
 
             num += 63;
-            encodeString.Append((char)(num));
+            encodedText.Append((char)(num));
 
-            return encodeString.ToString();
+            return encodedText.ToString();
         }
-
 
         /// <summary>
         /// 
@@ -56,35 +57,35 @@ namespace GeoSharp
         public static string Encode(IList<Position> positions)
         {
             var encodedPositions = new StringBuilder();
-            int plat = 0; // previous latitude
-            int plng = 0; // previous longitude
+            int prevLatitude = 0; // previous latitude
+            int prevLongitude = 0; // previous longitude
 
             foreach (var position in positions)
             {
-                var late5 = floor1e5(position.Latitude);
-                var lnge5 = floor1e5(position.Longitude);
+                var latitude = floor1e5(position.Latitude);
+                var longitude = floor1e5(position.Longitude);
 
-                var dlat = late5 - plat;
-                var dlng = lnge5 - plng;
+                var diffLatitude = latitude - prevLatitude;
+                var diffLongitude = longitude - prevLongitude;
 
-                plat = late5;
-                plng = lnge5;
+                prevLatitude = latitude;
+                prevLongitude = longitude;
 
                 // encode only the differences
-                encodedPositions.Append(encodeSignedNumber(dlat));
-                encodedPositions.Append(encodeSignedNumber(dlng));
+                encodedPositions.Append(encodeSignedNumber(diffLatitude));
+                encodedPositions.Append(encodeSignedNumber(diffLongitude));
             }
 
             return encodedPositions.ToString();
         }
 
-        public static List<Position> DecodePolylinePoints(string encodedPoints)
+        public static List<Position> Decode(string encodedPositions)
         {
-            if (string.IsNullOrEmpty(encodedPoints))
+            if (string.IsNullOrEmpty(encodedPositions))
                 return null;
 
             var poly = new List<Position>();
-            char[] polylinechars = encodedPoints.ToCharArray();
+            var polylineCharacters = encodedPositions.ToCharArray();
             int index = 0;
 
             int currentLat = 0;
@@ -93,19 +94,19 @@ namespace GeoSharp
             int sum;
             int shifter;
 
-            while (index < polylinechars.Length)
+            while (index < polylineCharacters.Length)
             {
                 // calculate next latitude
                 sum = 0;
                 shifter = 0;
                 do
                 {
-                    next5bits = (int)polylinechars[index++] - 63;
+                    next5bits = (int)polylineCharacters[index++] - 63;
                     sum |= (next5bits & 31) << shifter;
                     shifter += 5;
-                } while (next5bits >= 32 && index < polylinechars.Length);
+                } while (next5bits >= 32 && index < polylineCharacters.Length);
 
-                if (index >= polylinechars.Length)
+                if (index >= polylineCharacters.Length)
                     break;
 
                 currentLat += (sum & 1) == 1 ? ~(sum >> 1) : (sum >> 1);
@@ -115,12 +116,12 @@ namespace GeoSharp
                 shifter = 0;
                 do
                 {
-                    next5bits = (int)polylinechars[index++] - 63;
+                    next5bits = (int)polylineCharacters[index++] - 63;
                     sum |= (next5bits & 31) << shifter;
                     shifter += 5;
-                } while (next5bits >= 32 && index < polylinechars.Length);
+                } while (next5bits >= 32 && index < polylineCharacters.Length);
 
-                if (index >= polylinechars.Length && next5bits >= 32)
+                if (index >= polylineCharacters.Length && next5bits >= 32)
                     break;
 
                 currentLng += (sum & 1) == 1 ? ~(sum >> 1) : (sum >> 1);

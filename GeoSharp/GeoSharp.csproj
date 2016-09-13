@@ -39,7 +39,7 @@
   <ItemGroup>
     <Compile Include="Bound.cs" />
     <Compile Include="Position.cs" />
-    <Compile Include="PolylineDecoder.cs" />
+    <Compile Include="Google\PolylineDecoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

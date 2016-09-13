@@ -6,13 +6,14 @@
     <SharedGUID>9e10b2b8-8f9b-43bc-b850-c66f3d49001d</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>GeoSharp.Tests.Shared</Import_RootNamespace>
+    <Import_RootNamespace>GeoSharp.Tests</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\GooglePolyline.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)PolylineTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PolylineEncodingTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PositionTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestHelper.cs" />
   </ItemGroup>
 </Project>
