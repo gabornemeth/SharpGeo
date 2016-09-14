@@ -38,6 +38,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bound.cs" />
+    <Compile Include="IPoint.cs" />
+    <Compile Include="Point2.cs" />
+    <Compile Include="PolylineReducer.cs" />
+    <Compile Include="Point3.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Google\PolylineDecoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

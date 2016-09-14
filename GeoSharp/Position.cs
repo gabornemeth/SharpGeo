@@ -6,7 +6,7 @@ namespace GeoSharp
     /// <summary>
     /// Geographic position in WGS84
     /// </summary>
-    public struct Position
+    public struct Position : IPoint
     {
         /// <summary>
         /// Longitude in degrees
@@ -37,6 +37,31 @@ namespace GeoSharp
             get
             {
                 return empty;
+            }
+        }
+
+        public float X
+        {
+            get
+            {
+                return Longitude;
+            }
+            set
+            {
+                Longitude = value;
+            }
+        }
+
+        public float Y
+        {
+            get
+            {
+                return Latitude;
+            }
+
+            set
+            {
+                Latitude = value;
             }
         }
 
