@@ -34,11 +34,6 @@
             <param name="path">The assembly file path.</param>
             <returns>the parsed framework name, or <c>null</c> when path contains no folders.</returns>
         </member>
-        <member name="F:Cake.NuGet.Constants.NuGet.Source">
-            <summary>
-            The config key name for overriding the default nuget package source
-            </summary>
-        </member>
         <member name="T:Cake.NuGet.IFrameworkNameParser">
             <summary>
             Parses version-specific folder names into an instance of FrameworkName
@@ -46,12 +41,12 @@
         </member>
         <member name="M:Cake.NuGet.IFrameworkNameParser.ParseFrameworkName(System.String)">
             <summary>
-            This function tries to normalize a string that represents framework version names
+            This function tries to normalize a string that represents framework version names 
             (the name of a framework version-specific folder in a nuget package, i.e., "net451" or "net35") into
             something a framework name that the package manager understands.
             </summary>
             <param name="frameworkName">value to be parsed.</param>
-            <returns>A FrameworkName instance corresponding with the provided frameworkName token.
+            <returns>A FrameworkName instance corresponding with the provided frameworkName token.  
             When parsing is unsuccessful, returns a FrameworkName with an Identifier property of "Unsupported."</returns>
             <exception cref="T:System.ArgumentNullException">when frameworkName is null.</exception>
         </member>
@@ -223,7 +218,7 @@
             Installer for NuGet URI resources.
             </summary>
         </member>
-        <member name="M:Cake.NuGet.NuGetPackageInstaller.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.IO.NuGet.INuGetToolResolver,Cake.NuGet.INuGetPackageContentResolver,Cake.Core.Diagnostics.ICakeLog,Cake.Core.Configuration.ICakeConfiguration)">
+        <member name="M:Cake.NuGet.NuGetPackageInstaller.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.IO.NuGet.INuGetToolResolver,Cake.NuGet.INuGetPackageContentResolver,Cake.Core.Diagnostics.ICakeLog)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.NuGet.NuGetPackageInstaller"/> class.
             </summary>
@@ -233,7 +228,6 @@
             <param name="toolResolver">The NuGet tool resolver.</param>
             <param name="contentResolver">The content resolver.</param>
             <param name="log">The log.</param>
-            <param name="config">the configuration</param>
         </member>
         <member name="M:Cake.NuGet.NuGetPackageInstaller.CanInstall(Cake.Core.Packaging.PackageReference,Cake.Core.Packaging.PackageType)">
             <summary>

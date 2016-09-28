@@ -1,10 +1,10 @@
 {
 	"version": {
 		"VersionFile": "./version.json",
-		"AssemblyInfoFile": "./GeoSharp/AssemblyInfo.cs",
+		"AssemblyInfoFile": "./SharpGeo/AssemblyInfo.cs",
 		"LoadFrom": "VersionFile",
 		"AutoIncrementVersion": false,
-		"NamespaceBase": "GeoSharp"
+		"NamespaceBase": "SharpGeo"
 	},
 	"build": {
 		"SourcePath": "./",

@@ -4,63 +4,6 @@
         <name>Cake.Common</name>
     </assembly>
     <members>
-        <member name="T:Cake.Common.Build.AppVeyor.AppVeyorMessageCategoryType">
-            <summary>
-            AppVeyor AddMessage categories
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Build.AppVeyor.AppVeyorMessageCategoryType.Information">
-            <summary>
-            Informational message
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Build.AppVeyor.AppVeyorMessageCategoryType.Warning">
-            <summary>
-            Warning message
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Build.AppVeyor.AppVeyorMessageCategoryType.Error">
-            <summary>
-            Error message
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Build.AppVeyor.AppVeyorProviderAddMessageExtensions">
-            <summary>
-            AddMessage extension methods for the IAppVeyorProvider
-            </summary>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProviderAddMessageExtensions.AddInformationalMessage(Cake.Common.Build.AppVeyor.IAppVeyorProvider,System.String,System.Object[])">
-            <summary>
-            Adds an informational message to the AppVeyor build log
-            </summary>
-            <param name="provider">The AppVeyor provider</param>
-            <param name="format">The message</param>
-            <param name="args">The args</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProviderAddMessageExtensions.AddWarningMessage(Cake.Common.Build.AppVeyor.IAppVeyorProvider,System.String,System.Object[])">
-            <summary>
-            Adds a warning message to the AppVeyor build log
-            </summary>
-            <param name="provider">The AppVeyor provider</param>
-            <param name="format">The message</param>
-            <param name="args">The args</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProviderAddMessageExtensions.AddErrorMessage(Cake.Common.Build.AppVeyor.IAppVeyorProvider,System.String,System.Object[])">
-            <summary>
-            Adds a warning message to the AppVeyor build log
-            </summary>
-            <param name="provider">The AppVeyor provider</param>
-            <param name="format">The message</param>
-            <param name="args">The args</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProviderAddMessageExtensions.AddErrorMessage(Cake.Common.Build.AppVeyor.IAppVeyorProvider,System.String,System.Exception)">
-            <summary>
-            Adds a warning message to the AppVeyor build log
-            </summary>
-            <param name="provider">The AppVeyor provider</param>
-            <param name="message">The message</param>
-            <param name="exception">The exception</param>
-        </member>
         <member name="T:Cake.Common.Build.AppVeyor.AppVeyorTestResultsType">
             <summary>
             Provides the known values for the AppVeyor test results types.
@@ -89,55 +32,6 @@
         <member name="F:Cake.Common.Build.AppVeyor.AppVeyorTestResultsType.JUnit">
             <summary>
             JUnit test results.
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings">
-            <summary>
-            Appveyor upload artifacts settings
-            </summary>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings.SetArtifactType(Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactType)">
-            <summary>
-            Sets the type of artifact being uploaded to AppVeyor
-            </summary>
-            <param name="type">The type of artifact being uploaded</param>
-            <returns>The settings</returns>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings.SetDeploymentName(System.String)">
-            <summary>
-            Sets the deployment name
-            </summary>
-            <param name="deploymentName">The deployment name to attach to the artifact, required when using the AppVeyor deployment agent.  <paramref name="deploymentName"/> should not have any spaces</param>
-            <returns>The settings</returns>
-        </member>
-        <member name="P:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings.ArtifactType">
-            <summary>
-            Gets or sets a value indicating the type of artifact being uploaded to AppVeyor.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings.DeploymentName">
-            <summary>
-            Gets or sets a value indicating a deployment name to set for the uploaded artifact
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactType">
-            <summary>
-            Provides the known artifact upload types for the AppVeyor
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactType.Auto">
-            <summary>
-            Automatically deploy artifact type
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactType.WebDeployPackage">
-            <summary>
-            The artifact is a web deploy package (.zip)
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactType.NuGetPackage">
-            <summary>
-            The artifact is a NuGet package (.nupkg)
             </summary>
         </member>
         <member name="T:Cake.Common.Build.AppVeyor.Data.AppVeyorEnvironmentInfo">
@@ -279,20 +173,6 @@
             </summary>
             <param name="path">The file path of the artifact to upload.</param>
         </member>
-        <member name="M:Cake.Common.Build.AppVeyor.IAppVeyorProvider.UploadArtifact(Cake.Core.IO.FilePath,Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings)">
-            <summary>
-            Uploads an AppVeyor artifact.
-            </summary>
-            <param name="path">The file path of the artifact to upload.</param>
-            <param name="settings">The settings to apply when uploading an artifact</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.IAppVeyorProvider.UploadArtifact(Cake.Core.IO.FilePath,System.Action{Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings})">
-            <summary>
-            Uploads an AppVeyor artifact.
-            </summary>
-            <param name="path">The file path of the artifact to upload.</param>
-            <param name="settingsAction">The settings to apply when uploading an artifact</param>
-        </member>
         <member name="M:Cake.Common.Build.AppVeyor.IAppVeyorProvider.UploadTestResults(Cake.Core.IO.FilePath,Cake.Common.Build.AppVeyor.AppVeyorTestResultsType)">
             <summary>
             Uploads test results XML file to AppVeyor. Results type can be one of the following: mstest, xunit, nunit, nunit3, junit.
@@ -305,14 +185,6 @@
             Updates the build version.
             </summary>
             <param name="version">The new build version.</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.IAppVeyorProvider.AddMessage(System.String,Cake.Common.Build.AppVeyor.AppVeyorMessageCategoryType,System.String)">
-            <summary>
-            Adds a message to the AppVeyor build log.  Messages can be categorised as: Information, Warning or Error
-            </summary>
-            <param name="message">A short message to display</param>
-            <param name="category">The category of the message</param>
-            <param name="details">Additional message details</param>
         </member>
         <member name="P:Cake.Common.Build.AppVeyor.IAppVeyorProvider.IsRunningOnAppVeyor">
             <summary>
@@ -330,33 +202,18 @@
             The AppVeyor environment.
             </value>
         </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProvider.#ctor(Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Diagnostics.ICakeLog)">
+        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProvider.#ctor(Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Common.Build.AppVeyor.AppVeyorProvider"/> class.
             </summary>
             <param name="environment">The environment.</param>
             <param name="processRunner">The process runner.</param>
-            <param name="cakeLog">The cake log.</param>
         </member>
         <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProvider.UploadArtifact(Cake.Core.IO.FilePath)">
             <summary>
             Uploads an AppVeyor artifact.
             </summary>
             <param name="path">The file path of the artifact to upload.</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProvider.UploadArtifact(Cake.Core.IO.FilePath,Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings)">
-            <summary>
-            Uploads an AppVeyor artifact.
-            </summary>
-            <param name="path">The file path of the artifact to upload.</param>
-            <param name="settings">The settings to apply when uploading an artifact</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProvider.UploadArtifact(Cake.Core.IO.FilePath,System.Action{Cake.Common.Build.AppVeyor.AppVeyorUploadArtifactsSettings})">
-            <summary>
-            Uploads an AppVeyor artifact.
-            </summary>
-            <param name="path">The file path of the artifact to upload.</param>
-            <param name="settingsAction">The settings to apply when uploading an artifact</param>
         </member>
         <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProvider.UploadTestResults(Cake.Core.IO.FilePath,Cake.Common.Build.AppVeyor.AppVeyorTestResultsType)">
             <summary>
@@ -370,14 +227,6 @@
             Updates the build version.
             </summary>
             <param name="version">The new build version.</param>
-        </member>
-        <member name="M:Cake.Common.Build.AppVeyor.AppVeyorProvider.AddMessage(System.String,Cake.Common.Build.AppVeyor.AppVeyorMessageCategoryType,System.String)">
-            <summary>
-            Adds a message to the AppVeyor build.  Messages can be categorised as: Information, Warning or Error
-            </summary>
-            <param name="message">A short message to display</param>
-            <param name="category">The category of the message</param>
-            <param name="details">Additional message details</param>
         </member>
         <member name="P:Cake.Common.Build.AppVeyor.AppVeyorProvider.IsRunningOnAppVeyor">
             <summary>
@@ -690,6 +539,13 @@
             <param name="variable">The environment variable name.</param>
             <returns>The environment variable.</returns>
         </member>
+        <member name="M:Cake.Common.Build.Bitrise.BitriseInfo.GetEnvironmentInteger(System.String)">
+            <summary>
+            Gets an environment variable as a <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="variable">The environment variable name.</param>
+            <returns>The environment variable.</returns>
+        </member>
         <member name="M:Cake.Common.Build.Bitrise.BitriseInfo.GetEnvironmentBoolean(System.String)">
             <summary>
             Gets an environment variable as a <see cref="T:System.Boolean"/>.
@@ -709,18 +565,18 @@
         </member>
         <member name="P:Cake.Common.Build.Bitrise.IBitriseProvider.IsRunningOnBitrise">
             <summary>
-            Gets a value indicating whether the current build is running on Bitrise.
+            Gets a value indicating whether the current build is running on Bamboo.
             </summary>
             <value>
-            <c>true</c> if the current build is running on Bitrise; otherwise, <c>false</c>.
+            <c>true</c> if the current build is running on Bamboo; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Build.Bitrise.IBitriseProvider.Environment">
             <summary>
-            Gets the Bitrise environment.
+            Gets the Bamboo environment.
             </summary>
             <value>
-            The Bitrise environment.
+            The Bamboo environment.
             </value>
         </member>
         <member name="M:Cake.Common.Build.Bitrise.BitriseProvider.#ctor(Cake.Core.ICakeEnvironment)">
@@ -731,15 +587,15 @@
         </member>
         <member name="P:Cake.Common.Build.Bitrise.BitriseProvider.IsRunningOnBitrise">
             <summary>
-            Gets a value indicating whether the current build is running on Bitrise.
+            Gets a value indicating whether the current build is running on Bamboo.
             </summary>
             <value>
-            <c>true</c> if the current build is running on Bitrise; otherwise, <c>false</c>.
+            <c>true</c> if the current build is running on Bamboo; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Cake.Common.Build.Bitrise.BitriseProvider.Environment">
             <summary>
-            Gets the Bitrise environment.
+            Gets the Bamboo environment.
             </summary>
             <value>
             The Bamboo environment.
@@ -1036,7 +892,7 @@
             different build systems.
             </summary>
         </member>
-        <member name="M:Cake.Common.Build.BuildSystem.#ctor(Cake.Common.Build.AppVeyor.IAppVeyorProvider,Cake.Common.Build.TeamCity.ITeamCityProvider,Cake.Common.Build.MyGet.IMyGetProvider,Cake.Common.Build.Bamboo.IBambooProvider,Cake.Common.Build.ContinuaCI.IContinuaCIProvider,Cake.Common.Build.Jenkins.IJenkinsProvider,Cake.Common.Build.Bitrise.IBitriseProvider,Cake.Common.Build.TravisCI.ITravisCIProvider,Cake.Common.Build.BitbucketPipelines.IBitbucketPipelinesProvider)">
+        <member name="M:Cake.Common.Build.BuildSystem.#ctor(Cake.Common.Build.AppVeyor.IAppVeyorProvider,Cake.Common.Build.TeamCity.ITeamCityProvider,Cake.Common.Build.MyGet.IMyGetProvider,Cake.Common.Build.Bamboo.IBambooProvider,Cake.Common.Build.ContinuaCI.IContinuaCIProvider,Cake.Common.Build.Jenkins.IJenkinsProvider,Cake.Common.Build.Bitrise.IBitriseProvider,Cake.Common.Build.TravisCI.ITravisCIProvider)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Common.Build.BuildSystem"/> class.
             </summary>
@@ -1048,7 +904,6 @@
             <param name="jenkinsProvider">The Jenkins Provider.</param>
             <param name="bitriseProvider">The Bitrise Provider.</param>
             <param name="travisCIProvider">The Travis CI provider.</param>
-            <param name="bitbucketPipelinesProvider">The Bitbucket Pipelines provider.</param>
         </member>
         <member name="P:Cake.Common.Build.BuildSystem.IsRunningOnAppVeyor">
             <summary>
@@ -1304,44 +1159,13 @@
             The Travis CI.
             </value>
         </member>
-        <member name="P:Cake.Common.Build.BuildSystem.IsRunningOnBitbucketPipelines">
-            <summary>
-            Gets a value indicating whether this instance is running on Bitbucket Pipelines.
-            </summary>
-            <example>
-            <code>
-            if(BuildSystem.IsRunningOnBitbucketPipelines)
-            {
-                // Get the build commit hash.
-                var commitHash = BuildSystem.BitbucketPipelines.Environment.Repository.Commit;
-            }
-            </code>
-            </example>
-            <value>
-            <c>true</c> if this instance is running on Bitbucket Pipelines; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Build.BuildSystem.BitbucketPipelines">
-            <summary>
-            Gets the Bitbucket Pipelines Provider.
-            </summary>
-            <example>
-            <code>
-            if(BuildSystem.IsRunningOnBitbucketPipelines)
-            {
-                // Get the URL friendly repo name.
-                var repoSlug = BuildSystem.BitbucketPipelines.Environment.Repository.RepoSlug;
-            }
-            </code>
-            </example>
-        </member>
         <member name="P:Cake.Common.Build.BuildSystem.IsLocalBuild">
              <summary>
              Gets a value indicating whether the current build is local build.
              </summary>
              <example>
              <code>
-             // Gets a flag telling us if this is a local build or not.
+             // Get a flag telling us if this is a local build or not.
              var isLocal = BuildSystem.IsLocalBuild;
             
              // Define a task that only runs locally.
@@ -1441,7 +1265,7 @@
         </member>
         <member name="M:Cake.Common.Build.BuildSystemAliases.Jenkins(Cake.Core.ICakeContext)">
             <summary>
-            Gets a <see cref="T:Cake.Common.Build.Jenkins.JenkinsProvider"/> instance that can be user to
+            Get a <see cref="T:Cake.Common.Build.Jenkins.JenkinsProvider"/> instance that can be user to
             obtain information from the Jenkins environment.
             </summary>
             <example>
@@ -1454,7 +1278,7 @@
         </member>
         <member name="M:Cake.Common.Build.BuildSystemAliases.Bitrise(Cake.Core.ICakeContext)">
             <summary>
-            Gets a <see cref="T:Cake.Common.Build.Bitrise.BitriseProvider"/> instance that can be user to
+            Get a <see cref="T:Cake.Common.Build.Bitrise.BitriseProvider"/> instance that can be user to
             obtain information from the Bitrise environment.
             </summary>
             <example>
@@ -1467,7 +1291,7 @@
         </member>
         <member name="M:Cake.Common.Build.BuildSystemAliases.TravisCI(Cake.Core.ICakeContext)">
             <summary>
-            Gets a <see cref="T:Cake.Common.Build.TravisCI.TravisCIProvider"/> instance that can be user to
+            Get a <see cref="T:Cake.Common.Build.TravisCI.TravisCIProvider"/> instance that can be user to
             obtain information from the Travis CI environment.
             </summary>
             <example>
@@ -1477,19 +1301,6 @@
             </example>
             <param name="context">The context.</param>
             <returns>A <see cref="N:Cake.Common.Build.TravisCI"/> instance.</returns>
-        </member>
-        <member name="M:Cake.Common.Build.BuildSystemAliases.BitbucketPipelines(Cake.Core.ICakeContext)">
-            <summary>
-            Gets a <see cref="T:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesProvider"/> instance that can be user to
-            obtain information from the Bitbucket Pipelines environment.
-            </summary>
-            <example>
-            <code>
-            var isBitbucketPipelinesBuild = BitbucketPipelines.IsRunningOnBitbucketPipelines;
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <returns>A <see cref="N:Cake.Common.Build.BitbucketPipelines"/> instance.</returns>
         </member>
         <member name="T:Cake.Common.Build.ContinuaCI.ContinuaCIInfo">
             <summary>
@@ -2255,7 +2066,7 @@
         </member>
         <member name="T:Cake.Common.Build.Jenkins.IJenkinsProvider">
             <summary>
-            Represnts a Jenkins Provider
+            Represnts a Jenkins Provider  
             </summary>
         </member>
         <member name="P:Cake.Common.Build.Jenkins.IJenkinsProvider.IsRunningOnJenkins">
@@ -2268,10 +2079,10 @@
         </member>
         <member name="P:Cake.Common.Build.Jenkins.IJenkinsProvider.Environment">
             <summary>
-            Gets the Jenkins environment.
+            Gets the Bamboo environment.
             </summary>
             <value>
-            The Jenkins environment.
+            The Bamboo environment.
             </value>
         </member>
         <member name="T:Cake.Common.Build.Jenkins.JenkinsProvider">
@@ -2411,144 +2222,6 @@
             <summary>
             Normal Status
             </summary>
-        </member>
-        <member name="T:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesEnvironmentInfo">
-            <summary>
-            Provides Bitbucket Pipelines environment information for the current build.
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesInfo">
-            <summary>
-            Base class used to provide information about the Bitbucket Pipelines environment.
-            </summary>
-        </member>
-        <member name="M:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesInfo.#ctor(Cake.Core.ICakeEnvironment)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesInfo"/> class.
-            </summary>
-            <param name="environment">The environment.</param>
-        </member>
-        <member name="M:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesInfo.GetEnvironmentString(System.String)">
-            <summary>
-            Gets an environment variable as a <see cref="T:System.String"/>.
-            </summary>
-            <param name="variable">The environment variable name.</param>
-            <returns>The environment variable.</returns>
-        </member>
-        <member name="M:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesEnvironmentInfo.#ctor(Cake.Core.ICakeEnvironment)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesEnvironmentInfo"/> class.
-            </summary>
-            <param name="environment">The environment.</param>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesEnvironmentInfo.Repository">
-            <summary>
-            Gets Bitbucket Pipelines repository information.
-            </summary>
-            <value>
-            The repository.
-            </value>
-        </member>
-        <member name="T:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo">
-            <summary>
-            Provides Bitbucket Pipelines repository information for the current build.
-            </summary>
-        </member>
-        <member name="M:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.#ctor(Cake.Core.ICakeEnvironment)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo"/> class.
-            </summary>
-            <param name="environment">The environment.</param>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.Branch">
-            <summary>
-            Gets the branch on which the build was kicked off. This value is only available on branches.
-            </summary>
-            <remarks>Note: <see cref="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.Branch"/> and <see cref="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.Tag"/> are mutually exclusive. If you use both, only one will have a value.</remarks>
-            <value>
-            The SCM branch.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.Tag">
-            <summary>
-            Gets the tag on which the build was kicked off. This value is only available when tagged.
-            </summary>
-            <remarks>Note: <see cref="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.Branch"/> and <see cref="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.Tag"/> are mutually exclusive. If you use both, only one will have a value.</remarks>
-            <value>
-            The SCM tag.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.Commit">
-            <summary>
-            Gets the commit hash of a commit that kicked off the build.
-            </summary>
-            <value>
-            The SCM commit.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.RepoOwner">
-            <summary>
-            Gets the name of the account in which the repository lives.
-            </summary>
-            <value>
-            The repository owner account.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.Data.BitbucketPipelinesRepositoryInfo.RepoSlug">
-            <summary>
-            Gets the URL-friendly version of a repository name.
-            </summary>
-            <value>
-            The URL-friendly repository name.
-            </value>
-        </member>
-        <member name="T:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesProvider">
-            <summary>
-            Responsible for communicating with Pipelines.
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Build.BitbucketPipelines.IBitbucketPipelinesProvider">
-            <summary>
-            Represents a Bitrise provider.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.IBitbucketPipelinesProvider.IsRunningOnBitbucketPipelines">
-            <summary>
-            Gets a value indicating whether the current build is running on Bitbucket Pipelines.
-            </summary>
-            <value>
-            <c>true</c> if the current build is running on Bitbucket Pipelines; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.IBitbucketPipelinesProvider.Environment">
-            <summary>
-            Gets the Bitbucket Pipelines environment.
-            </summary>
-            <value>
-            The Bitbucket Pipelines environment.
-            </value>
-        </member>
-        <member name="M:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesProvider.#ctor(Cake.Core.ICakeEnvironment)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesProvider"/> class.
-            </summary>
-            <param name="environment">The environment.</param>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesProvider.IsRunningOnBitbucketPipelines">
-            <summary>
-            Gets a value indicating whether the current build is running on Pipelines.
-            </summary>
-            <value>
-            <c>true</c> if the current build is running on Pipelines; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Build.BitbucketPipelines.BitbucketPipelinesProvider.Environment">
-            <summary>
-            Gets the Pipelines environment.
-            </summary>
-            <value>
-            The Pipelines environment.
-            </value>
         </member>
         <member name="T:Cake.Common.Build.TeamCity.ITeamCityProvider">
             <summary>
@@ -2778,13 +2451,6 @@
             Tells TeamCity to change the current build number.
             </summary>
             <param name="buildNumber">The required build number.</param>
-        </member>
-        <member name="M:Cake.Common.Build.TeamCity.TeamCityProvider.SetParameter(System.String,System.String)">
-            <summary>
-            Tells TeamCity to set a named parameter with a given value
-            </summary>
-            <param name="parameterName">The name of the parameter to set.</param>
-            <param name="parameterValue">The value to set for the named parameter.</param>
         </member>
         <member name="P:Cake.Common.Build.TeamCity.TeamCityProvider.IsRunningOnTeamCity">
             <summary>
@@ -3898,15 +3564,13 @@
                 Configuration         : {0}
                 Platform              : {1}
                 OutputType            : {2}
-                OutputPath            : {3}
-                RootNameSpace         : {4}
-                AssemblyName          : {5}
-                TargetFrameworkVersion: {6}
-                Files                 : {7}",
+                RootNameSpace         : {3}
+                AssemblyName          : {4}
+                TargetFrameworkVersion: {5}
+                Files                 : {6}",
                 parsedProject.Configuration,
                 parsedProject.Platform,
                 parsedProject.OutputType,
-                parsedProject.OutputPath,
                 parsedProject.RootNameSpace,
                 parsedProject.AssemblyName,
                 parsedProject.TargetFrameworkVersion,
@@ -3975,7 +3639,7 @@
             Represents the content in an MSBuild project file.
             </summary>
         </member>
-        <member name="M:Cake.Common.Solution.Project.ProjectParserResult.#ctor(System.String,System.String,System.String,System.String,Cake.Core.IO.DirectoryPath,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Cake.Common.Solution.Project.ProjectFile},System.Collections.Generic.IEnumerable{Cake.Common.Solution.Project.ProjectAssemblyReference},System.Collections.Generic.IEnumerable{Cake.Common.Solution.Project.ProjectReference})">
+        <member name="M:Cake.Common.Solution.Project.ProjectParserResult.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Cake.Common.Solution.Project.ProjectFile})">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Common.Solution.Project.ProjectParserResult"/> class.
             </summary>
@@ -3983,14 +3647,11 @@
             <param name="platform">The target platform.</param>
             <param name="projectGuid">The unique project identifier.</param>
             <param name="outputType">The compiler output type.</param>
-            <param name="outputPath">The compiler output path</param>
             <param name="rootNameSpace">The default root namespace.</param>
             <param name="assemblyName">Gets the build target assembly name.</param>
             <param name="targetFrameworkVersion">The compiler framework version.</param>
             <param name="targetFrameworkProfile">The compiler framework profile.</param>
             <param name="files">The project content files.</param>
-            <param name="references">The references.</param>
-            <param name="projectReferences">The references to other projects.</param>
         </member>
         <member name="P:Cake.Common.Solution.Project.ProjectParserResult.Configuration">
             <summary>
@@ -4015,12 +3676,6 @@
             Gets the compiler output type, i.e. <c>Exe/Library</c>.
             </summary>
             <value>The output type.</value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectParserResult.OutputPath">
-            <summary>
-            Gets the compiler output path.
-            </summary>
-            <value>The output path.</value>
         </member>
         <member name="P:Cake.Common.Solution.Project.ProjectParserResult.RootNameSpace">
             <summary>
@@ -4051,136 +3706,6 @@
             Gets the project content files.
             </summary>
             <value>The files.</value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectParserResult.References">
-            <summary>
-            Gets the references.
-            </summary>
-            <value>
-            The references.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectParserResult.ProjectReferences">
-            <summary>
-            Gets the references to other projects.
-            </summary>
-            <value>
-            The references.
-            </value>
-        </member>
-        <member name="T:Cake.Common.Solution.Project.ProjectReference">
-            <summary>
-            Represents a project reference to another project.
-            </summary>
-            <remarks>
-            Schema from https://msdn.microsoft.com/en-us/library/ms164283.aspx
-            and https://msdn.microsoft.com/en-us/library/bb629388.aspx
-            </remarks>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectReference.FilePath">
-            <summary>
-            Gets or sets the path to the referenced project file.
-            </summary>
-            <value>
-            The path to the referenced project file.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectReference.RelativePath">
-            <summary>
-            Gets or sets the relative path to the referenced project file.
-            </summary>
-            <value>
-            The relative path to the referenced project file.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectReference.Name">
-            <summary>
-            Gets or sets the display name of the reference.
-            </summary>
-            <value>
-            The display name of the reference.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectReference.Project">
-            <summary>
-            Gets or sets a GUID for the reference.
-            </summary>
-            <value>
-            A GUID for the reference.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectReference.Package">
-            <summary>
-            Gets or sets the path of the project file that is being referenced.
-            </summary>
-            <value>
-            The path of the project file that is being referenced.
-            </value>
-        </member>
-        <member name="T:Cake.Common.Solution.Project.ProjectAssemblyReference">
-            <summary>
-            Represents a project assembly reference.
-            </summary>
-            <remarks>
-            Schema from https://msdn.microsoft.com/en-us/library/ms164283.aspx
-            and https://msdn.microsoft.com/en-us/library/bb629388.aspx
-            </remarks>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectAssemblyReference.Include">
-            <summary>
-            Gets or sets the reference to include.
-            </summary>
-            <value>
-            The reference to include.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectAssemblyReference.HintPath">
-            <summary>
-            Gets or sets the relative or absolute path of the assembly.
-            </summary>
-            <value>
-            The relative or absolute path of the assembly.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectAssemblyReference.Name">
-            <summary>
-            Gets or sets the display name of the assembly.
-            </summary>
-            <value>
-            The display name of the assembly.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectAssemblyReference.FusionName">
-            <summary>
-            Gets or sets the simple or strong fusion name for the item.
-            </summary>
-            <value>
-            The simple or strong fusion name for the item.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectAssemblyReference.SpecificVersion">
-            <summary>
-            Gets or sets whether only the version in the fusion name should be referenced.
-            </summary>
-            <value>
-            Whether only the version in the fusion name should be referenced.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectAssemblyReference.Aliases">
-            <summary>
-            Gets or sets any aliases for the reference.
-            </summary>
-            <value>
-            Any aliases for the reference.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Solution.Project.ProjectAssemblyReference.Private">
-            <summary>
-            Gets or sets whether the reference should be copied to the output folder.
-            </summary>
-            <value>
-            Whether the reference should be copied to the output folder.
-            </value>
         </member>
         <member name="T:Cake.Common.Solution.Project.ProjectXElement">
             <summary>
@@ -4227,11 +3752,6 @@
             Namespace output type element
             </summary>
         </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.OutputPath">
-            <summary>
-            Namespace output path element
-            </summary>
-        </member>
         <member name="F:Cake.Common.Solution.Project.ProjectXElement.AssemblyName">
             <summary>
             Namespace assembly name element
@@ -4275,41 +3795,6 @@
         <member name="F:Cake.Common.Solution.Project.ProjectXElement.Service">
             <summary>
             Gets the namespace for the service element.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.HintPath">
-            <summary>
-            Gets the namespace for the hint path element.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.Name">
-            <summary>
-            Gets the namespace for the name element.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.FusionName">
-            <summary>
-            Gets the namespace for the fusion name element.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.SpecificVersion">
-            <summary>
-            Gets the namespace for the specific version element.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.Aliases">
-            <summary>
-            Gets the namespace for the aliases element.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.Private">
-            <summary>
-            Gets the namespace for the private element.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.Project.ProjectXElement.Package">
-            <summary>
-            Gets the namespace for the package element.
             </summary>
         </member>
         <member name="T:Cake.Common.Solution.Project.Properties.AssemblyInfoCreator">
@@ -4950,13 +4435,12 @@
             Represent release notes.
             </summary>
         </member>
-        <member name="M:Cake.Common.ReleaseNotes.#ctor(System.Version,System.Collections.Generic.IEnumerable{System.String},System.String)">
+        <member name="M:Cake.Common.ReleaseNotes.#ctor(System.Version,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Common.ReleaseNotes"/> class.
             </summary>
             <param name="version">The version.</param>
             <param name="notes">The notes.</param>
-            <param name="rawVersionLine">The raw text of the version line.</param>
         </member>
         <member name="P:Cake.Common.ReleaseNotes.Version">
             <summary>
@@ -4969,12 +4453,6 @@
             Gets the release notes.
             </summary>
             <value>The release notes.</value>
-        </member>
-        <member name="P:Cake.Common.ReleaseNotes.RawVersionLine">
-            <summary>
-            Gets the raw text of the line that <see cref="P:Cake.Common.ReleaseNotes.Version"/> was extracted from.
-            </summary>
-            <value>The raw text of the Version line.</value>
         </member>
         <member name="T:Cake.Common.ReleaseNotesAliases">
             <summary>
@@ -5220,11 +4698,6 @@
             Gets all solution projects.
             </summary>
         </member>
-        <member name="T:Cake.Common.Solution.SolutionFolder">
-            <summary>
-            Represents a folder in a MSBuild solution.
-            </summary>
-        </member>
         <member name="T:Cake.Common.Solution.SolutionProject">
             <summary>
             Represents a project in a MSBuild solution.
@@ -5257,32 +4730,6 @@
         <member name="P:Cake.Common.Solution.SolutionProject.Type">
             <summary>
             Gets the project type identity.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Solution.SolutionProject.Parent">
-            <summary>
-            Gets the parent project if any, otherwise null.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Solution.SolutionFolder.TypeIdentifier">
-            <summary>
-            Visual Studio project type guid for solution folder
-            </summary>
-            <remarks>
-            More information can be found http://www.codeproject.com/Reference/720512/List-of-Visual-Studio-Project-Type-GUIDs
-            </remarks>
-        </member>
-        <member name="M:Cake.Common.Solution.SolutionFolder.#ctor(System.String,System.String,Cake.Core.IO.FilePath)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Solution.SolutionFolder"/> class.
-            </summary>
-            <param name="id">The folder project identity.</param>
-            <param name="name">The folder name.</param>
-            <param name="path">The folder path.</param>
-        </member>
-        <member name="P:Cake.Common.Solution.SolutionFolder.Items">
-            <summary>
-            Gets Child items of this folder
             </summary>
         </member>
         <member name="T:Cake.Common.Text.TextTransformationAliases">
@@ -8127,10 +7574,10 @@
                  {
                      Sources = new[] {"https://www.example.com/nugetfeed", "https://www.example.com/nugetfeed2"},
                      FallbackSources = new[] {"https://www.example.com/fallbacknugetfeed"},
-                     PackagesDirectory = "./packages",
+                     Packages = "./packages",
                      Verbosity = Information,
                      DisableParallel = true,
-                     InferRuntimes = new[] {"runtime1", "runtime2"}
+                     Runtimes = new[] {"runtime1", "runtime2"}
                  };
             
                  DotNetCoreRestore(settings);
@@ -8150,10 +7597,10 @@
                  {
                      Sources = new[] {"https://www.example.com/nugetfeed", "https://www.example.com/nugetfeed2"},
                      FallbackSources = new[] {"https://www.example.com/fallbacknugetfeed"},
-                     PackagesDirectory = "./packages",
+                     Packages = "./packages",
                      Verbosity = Information,
                      DisableParallel = true,
-                     InferRuntimes = new[] {"runtime1", "runtime2"}
+                     Runtimes = new[] {"runtime1", "runtime2"}
                  };
             
                  DotNetCoreRestore("./src/*", settings);
@@ -8183,7 +7630,7 @@
              <code>
                  var settings = new DotNetCoreBuildSettings
                  {
-                     Framework = "netcoreapp1.0",
+                     Frameworks = new[] { "net451", "dnxcore50" },
                      Configuration = "Debug",
                      OutputDirectory = "./artifacts/"
                  };
@@ -8215,7 +7662,8 @@
              <code>
                  var settings = new DotNetCorePackSettings
                  {
-                     Configuration = "Release",
+                     Frameworks = new[] { "dnx451", "dnxcore50" },
+                     Configurations = new[] { "Debug", "Release" },
                      OutputDirectory = "./artifacts/"
                  };
             
@@ -8271,7 +7719,7 @@
              <code>
                  var settings = new DotNetCoreRunSettings
                  {
-                     Framework = "netcoreapp1.0",
+                     Framework = "dnxcore50",
                      Configuration = "Release"
                  };
             
@@ -8302,7 +7750,7 @@
              <code>
                  var settings = new DotNetCorePublishSettings
                  {
-                     Framework = "netcoreapp1.0",
+                     Framework = "dnxcore50",
                      Configuration = "Release",
                      OutputDirectory = "./artifacts/"
                  };
@@ -8502,7 +7950,7 @@
             .NET Core project restorer.
             </summary>
         </member>
-        <member name="M:Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestorer.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator,Cake.Core.Diagnostics.ICakeLog)">
+        <member name="M:Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestorer.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestorer"/> class.
             </summary>
@@ -8510,7 +7958,6 @@
             <param name="environment">The environment.</param>
             <param name="processRunner">The process runner.</param>
             <param name="tools">The tool locator.</param>
-            <param name="log">The cake log.</param>
         </member>
         <member name="M:Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestorer.Restore(System.String,Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestoreSettings)">
             <summary>
@@ -8602,16 +8049,6 @@
         <member name="F:Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestoreVerbosity.Verbose">
             <summary>
             Verbose level.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestoreVerbosity.Debug">
-            <summary>
-            Debug level.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.DotNetCore.Restore.DotNetCoreRestoreVerbosity.Minimal">
-            <summary>
-            Minimal level.
             </summary>
         </member>
         <member name="T:Cake.Common.Tools.DotNetCore.Run.DotNetCoreRunner">
@@ -8993,11 +8430,6 @@
             <summary>
             Runs all Fixie tests in the assemblies matching the specified pattern.
             </summary>
-            <example>
-            <code>
-            Fixie("./src/UnitTests/*.dll");
-            </code>
-            </example>
             <param name="context">The context.</param>
             <param name="pattern">The pattern.</param>
         </member>
@@ -9006,13 +8438,6 @@
             Runs all Fixie tests in the assemblies matching the specified pattern,
             using the specified settings.
             </summary>
-            <example>
-            <code>
-            Fixie("./src/UnitTests/*.dll", new FixieSettings {
-                NUnitXml = TestResult.xml
-                });
-            </code>
-            </example>
             <param name="context">The context.</param>
             <param name="pattern">The pattern.</param>
             <param name="settings">The settings.</param>
@@ -9021,15 +8446,6 @@
             <summary>
             Runs all Fixie tests in the specified assemblies.
             </summary>
-            <example>
-            <code>
-            var assemblies = new [] {
-                "UnitTests1.dll",
-                "UnitTests2.dll"
-            };
-            Fixie(assemblies);
-            </code>
-            </example>
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
         </member>
@@ -9037,12 +8453,6 @@
             <summary>
             Runs all Fixie tests in the specified assemblies.
             </summary>
-            <example>
-            <code>
-            var assemblies = GetFiles("./src/UnitTests/*.dll");
-            Fixie(assemblies);
-            </code>
-            </example>
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
         </member>
@@ -9051,17 +8461,6 @@
             Runs all Fixie tests in the specified assemblies,
             using the specified settings.
             </summary>
-            <example>
-            <code>
-            var assemblies = new [] {
-                "UnitTests1.dll",
-                "UnitTests2.dll"
-            };
-            Fixie(assemblies, new FixieSettings {
-                NUnitXml = TestResult.xml
-                });
-            </code>
-            </example>
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
             <param name="settings">The settings.</param>
@@ -9071,14 +8470,6 @@
             Runs all Fixie tests in the specified assemblies,
             using the specified settings.
             </summary>
-            <example>
-            <code>
-            var assemblies = GetFiles("./src/UnitTests/*.dll");
-            Fixie(assemblies, new FixieSettings {
-                NUnitXml = TestResult.xml
-                });
-            </code>
-            </example>
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
             <param name="settings">The settings.</param>
@@ -9632,12 +9023,6 @@
             Gets or sets the branch to use if using dynamic repositories.
             </summary>
         </member>
-        <member name="P:Cake.Common.Tools.GitVersion.GitVersionSettings.NoFetch">
-            <summary>
-            Gets or sets a value indicating whether to fetch repository information from remote when calculating version.
-            </summary>
-            <remarks>If your CI server clones the entire repository you can set this to 'true' to prevent GitVersion attempting any remote repository fetching</remarks>
-        </member>
         <member name="P:Cake.Common.Tools.GitVersion.GitVersionSettings.DynamicRepositoryPath">
             <summary>
             Gets or sets the dynamic repository path. Defaults to %TEMP%.
@@ -9747,7 +9132,7 @@
         </member>
         <member name="M:Cake.Common.Tools.GitReleaseManager.Close.GitReleaseManagerMilestoneCloser.Close(System.String,System.String,System.String,System.String,System.String,Cake.Common.Tools.GitReleaseManager.Close.GitReleaseManagerCloseMilestoneSettings)">
             <summary>
-            Creates a Release using the specified settings.
+            Creates a Release using the specified and settings.
             </summary>
             <param name="userName">The user name.</param>
             <param name="password">The password.</param>
@@ -10203,6 +9588,11 @@
         <member name="T:Cake.Common.Tools.GitReleaseNotes.GitReleaseNotesSettings">
             <summary>
             Contains settings used by <see cref="T:Cake.Common.Tools.GitReleaseNotes.GitReleaseNotesRunner"/>.
+            </summary>
+        </member>
+        <member name="P:Cake.Common.Tools.GitReleaseNotes.GitReleaseNotesSettings.WorkingDirectory">
+            <summary>
+            Gets or sets the Working Directory for generating release notes from.
             </summary>
         </member>
         <member name="P:Cake.Common.Tools.GitReleaseNotes.GitReleaseNotesSettings.Verbose">
@@ -10824,7 +10214,7 @@
         </member>
         <member name="M:Cake.Common.IO.DirectoryAliases.CopyDirectory(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.DirectoryPath)">
             <summary>
-            Copies the contents of a directory, including subdirectories to the specified location.
+            Copies the contents of a directory to the specified location.
             </summary>
             <example>
             <code>
@@ -11117,16 +10507,16 @@
             <param name="pattern">The glob pattern to match.</param>
             <returns>A <see cref="T:Cake.Core.IO.FilePathCollection"/>.</returns>
         </member>
-        <member name="M:Cake.Common.IO.GlobbingAliases.GetFiles(Cake.Core.ICakeContext,System.String,System.Func{Cake.Core.IO.IDirectory,System.Boolean})">
+        <member name="M:Cake.Common.IO.GlobbingAliases.GetFiles(Cake.Core.ICakeContext,System.String,System.Func{Cake.Core.IO.IFileSystemInfo,System.Boolean})">
             <summary>
             Gets all files matching the specified pattern.
             </summary>
             <example>
             <code>
             Func&lt;IFileSystemInfo, bool&gt; exclude_node_modules =
-                fileSystemInfo =&gt; !fileSystemInfo.Path.FullPath.EndsWith(
-                    "node_modules", StringComparison.OrdinalIgnoreCase);
-            
+            fileSystemInfo=&gt;!fileSystemInfo.Path.FullPath.EndsWith(
+                            "node_modules",
+                            StringComparison.OrdinalIgnoreCase);
             var files = GetFiles("./**/Cake.*.dll", exclude_node_modules);
             foreach(var file in files)
             {
@@ -11136,7 +10526,7 @@
             </example>
             <param name="context">The context.</param>
             <param name="pattern">The glob pattern to match.</param>
-            <param name="predicate">The predicate used to filter directories based on file system information.</param>
+            <param name="predicate">The predicate used to filter files based on file system information.</param>
             <returns>A <see cref="T:Cake.Core.IO.FilePathCollection"/>.</returns>
         </member>
         <member name="M:Cake.Common.IO.GlobbingAliases.GetDirectories(Cake.Core.ICakeContext,System.String)">
@@ -11156,16 +10546,16 @@
             <param name="pattern">The glob pattern to match.</param>
             <returns>A <see cref="T:Cake.Core.IO.DirectoryPathCollection"/>.</returns>
         </member>
-        <member name="M:Cake.Common.IO.GlobbingAliases.GetDirectories(Cake.Core.ICakeContext,System.String,System.Func{Cake.Core.IO.IDirectory,System.Boolean})">
+        <member name="M:Cake.Common.IO.GlobbingAliases.GetDirectories(Cake.Core.ICakeContext,System.String,System.Func{Cake.Core.IO.IFileSystemInfo,System.Boolean})">
             <summary>
             Gets all directory matching the specified pattern.
             </summary>
             <example>
             <code>
             Func&lt;IFileSystemInfo, bool&gt; exclude_node_modules =
-                fileSystemInfo =&gt; !fileSystemInfo.Path.FullPath.EndsWith(
-                    "node_modules", StringComparison.OrdinalIgnoreCase);
-            
+            fileSystemInfo=&gt;!fileSystemInfo.Path.FullPath.EndsWith(
+                            "node_modules",
+                            StringComparison.OrdinalIgnoreCase);
             var directories = GetDirectories("./src/**/obj/*", exclude_node_modules);
             foreach(var directory in directories)
             {
@@ -11273,11 +10663,11 @@
              msBuildProperties.Add("platform", "AnyCPU");
             
              InspectCode("./MySolution.sln", new InspectCodeSettings {
-                 SolutionWideAnalysis = true,
-                 Profile = "./MySolution.sln.DotSettings",
-                 MsBuildProperties = msBuildProperties,
-                 OutputFile = resharperReportsDirectory + File("inspectcode-output.xml"),
-                 ThrowExceptionOnFindingViolations = true
+                 SolutionWideAnalysis = true;
+                 Profile = "./MySolution.sln.DotSettings";
+                 MsBuildProperties = msBuildProperties;
+                 OutputFile = resharperReportsDirectory + File("inspectcode-output.xml");
+                 ThrowExceptionOnFindingViolations = true;
              });
              </code>
              </example>
@@ -11636,8 +11026,6 @@
         <member name="P:Cake.Common.Tools.MSBuild.MSBuildSettings.MaxCpuCount">
             <summary>
             Gets or sets the maximum CPU count.
-            If this value is zero, MSBuild will use as many processes as
-            there are available CPUs to build the project.
             </summary>
             <value>The maximum CPU count.</value>
         </member>
@@ -11709,12 +11097,12 @@
             <param name="configuration">The configuration.</param>
             <returns>The same <see cref="T:Cake.Common.Tools.MSBuild.MSBuildSettings"/> instance so that multiple calls can be chained.</returns>
         </member>
-        <member name="M:Cake.Common.Tools.MSBuild.MSBuildSettingsExtensions.SetMaxCpuCount(Cake.Common.Tools.MSBuild.MSBuildSettings,System.Nullable{System.Int32})">
+        <member name="M:Cake.Common.Tools.MSBuild.MSBuildSettingsExtensions.SetMaxCpuCount(Cake.Common.Tools.MSBuild.MSBuildSettings,System.Int32)">
             <summary>
             Sets the maximum CPU count.
             </summary>
             <param name="settings">The settings.</param>
-            <param name="maxCpuCount">The maximum CPU count. Set this value to zero to use as many MSBuild processes as available CPUs.</param>
+            <param name="maxCpuCount">The maximum CPU count.</param>
             <returns>The same <see cref="T:Cake.Common.Tools.MSBuild.MSBuildSettings"/> instance so that multiple calls can be chained.</returns>
         </member>
         <member name="M:Cake.Common.Tools.MSBuild.MSBuildSettingsExtensions.SetNodeReuse(Cake.Common.Tools.MSBuild.MSBuildSettings,System.Boolean)">
@@ -11992,19 +11380,8 @@
         </member>
         <member name="P:Cake.Common.Tools.MSTest.MSTestSettings.Category">
             <summary>
-            Gets or sets a value indicating the test category filter string to pass to
-            MSTest.exe flag <see href="https://msdn.microsoft.com/en-us/library/ms182489.aspx#category">/testcategory</see>.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Tools.MSTest.MSTestSettings.ResultsFile">
-            <summary>
-            Gets or sets the filepath for a named resulting test file. 
-            MSTest.exe flag <see href="https://msdn.microsoft.com/en-us/library/ms182489.aspx#resultsfile">/resultsfile</see>.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Tools.MSTest.MSTestSettings.TestSettings">
-            <summary>
-            Gets or sets the test settings file to pass to MSTest.exe flag <see href="https://msdn.microsoft.com/en-us/library/ms182489.aspx#testsettings">/testsettings</see>.
+            Gets or sets a value indicating the test category filter string to pass to 
+            MSTest.exe flag /testcategory. See: https://msdn.microsoft.com/en-us/library/ms182489.aspx#category
             </summary>
         </member>
         <member name="T:Cake.Common.Tools.NSIS.MakeNSISRunner">
@@ -12076,11 +11453,6 @@
             </summary>
             <param name="context">The context.</param>
             <param name="scriptFile">The path to the <c>.nsi</c> script file to compile.</param>
-            <example>
-            <code>
-            MakeNSIS("./src/Cake.nsi");
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.NSIS.NSISAliases.MakeNSIS(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Common.Tools.NSIS.MakeNSISSettings)">
             <summary>
@@ -12089,13 +11461,6 @@
             <param name="context">The context.</param>
             <param name="scriptFile">The path to the <c>.nsi</c> script file to compile.</param>
             <param name="settings">The <see cref="T:Cake.Common.Tools.NSIS.MakeNSISSettings"/> to use.</param>
-            <example>
-            <code>
-            MakeNSIS("./src/Cake.nsi", new MakeNSISSettings {
-                NoConfig = true
-                });
-            </code>
-            </example>
         </member>
         <member name="T:Cake.Common.Tools.NuGet.Install.NuGetInstaller">
             <summary>
@@ -12671,8 +12036,6 @@
              <param name="packageFilePath">The <c>.nupkg</c> file path.</param>
              <param name="settings">The settings.</param>
              <example>
-             <para>NOTE: Starting with NuGet 3.4.2, the Source parameter is a mandatory parameter.</para>
-             <para>It is strongly recommended that you ALWAYS set the Source property within the <see cref="T:Cake.Common.Tools.NuGet.Push.NuGetPushSettings"/> instance.</para>
              <code>
              // Get the path to the package.
              var package = "./nuget/SlackPRTGCommander.0.0.1.nupkg";
@@ -12693,8 +12056,6 @@
              <param name="packageFilePaths">The <c>.nupkg</c> file paths.</param>
              <param name="settings">The settings.</param>
              <example>
-             <para>NOTE: Starting with NuGet 3.4.2, the Source parameter is a mandatory parameter.</para>
-             <para>It is strongly recommended that you ALWAYS set the Source property within the <see cref="T:Cake.Common.Tools.NuGet.Push.NuGetPushSettings"/> instance.</para>
              <code>
              // Get the paths to the packages.
              var packages = GetFiles("./**/*.nupkg");
@@ -13317,7 +12678,7 @@
             The NuGet package pusher.
             </summary>
         </member>
-        <member name="M:Cake.Common.Tools.NuGet.Push.NuGetPusher.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator,Cake.Core.IO.NuGet.INuGetToolResolver,Cake.Core.Diagnostics.ICakeLog)">
+        <member name="M:Cake.Common.Tools.NuGet.Push.NuGetPusher.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator,Cake.Core.IO.NuGet.INuGetToolResolver)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Common.Tools.NuGet.Push.NuGetPusher"/> class.
             </summary>
@@ -13326,7 +12687,6 @@
             <param name="processRunner">The process runner.</param>
             <param name="tools">The tool locator.</param>
             <param name="resolver">The NuGet tool resolver.</param>
-            <param name="log">The logger.</param>
         </member>
         <member name="M:Cake.Common.Tools.NuGet.Push.NuGetPusher.Push(Cake.Core.IO.FilePath,Cake.Common.Tools.NuGet.Push.NuGetPushSettings)">
             <summary>
@@ -13748,13 +13108,6 @@
             Gets the possible names of the tool executable.
             </summary>
             <returns>The tool executable name.</returns>
-        </member>
-        <member name="M:Cake.Common.Tools.NUnit.NUnit3Runner.ProcessExitCode(System.Int32)">
-            <summary>
-            Customized exit code handling.
-            Throws <see cref="T:Cake.Core.CakeException"/> on non-zero exit code
-            </summary>
-            <param name="exitCode">The process exit code</param>
         </member>
         <member name="T:Cake.Common.Tools.NUnit.NUnit3Settings">
             <summary>
@@ -14182,13 +13535,6 @@
             </summary>
             <returns>The tool executable name.</returns>
         </member>
-        <member name="M:Cake.Common.Tools.NUnit.NUnitRunner.ProcessExitCode(System.Int32)">
-            <summary>
-            Customized exit code handling.
-            Throws <see cref="T:Cake.Core.CakeException"/> on non-zero exit code
-            </summary>
-            <param name="exitCode">The process exit code</param>
-        </member>
         <member name="T:Cake.Common.Tools.NUnit.NUnitSettings">
             <summary>
                 Contains settings used by <see cref="T:Cake.Common.Tools.NUnit.NUnitRunner"/>.
@@ -14351,7 +13697,7 @@
                  });
             
                  OctoCreateRelease(projectNameOnServer, new CreateReleaseSettings {
-                     ConfigurationFile = @"C:\OctopusDeploy.config"
+                     ConfigurationFile = "C:\OctopusDeploy.config"
                  });
             
                  // Additional Options
@@ -14367,7 +13713,7 @@
                                      { "PackageOne", "1.0.2.3" },
                                      { "PackageTwo", "5.2.3" }
                                  },
-                     PackagesFolder = @"C:\MyOtherNugetFeed",
+                     PackagesFolder = "C:\MyOtherNugetFeed",
             
                      // One or the other
                      ReleaseNotes = "Version 2.0 \n What a milestone we have ...",
@@ -14377,26 +13723,6 @@
                  });
              </code>
              </example>
-        </member>
-        <member name="M:Cake.Common.Tools.OctopusDeploy.OctopusDeployAliases.OctoPush(Cake.Core.ICakeContext,System.String,System.String,Cake.Core.IO.FilePath,Cake.Common.Tools.OctopusDeploy.OctopusPushSettings)">
-            <summary>
-            Pushes the specified package to the Octopus Deploy repository
-            </summary>
-            <param name="context">The cake context</param>
-            /// <param name="server">The Octopus server URL</param>
-            <param name="apiKey">The user's API key</param>
-            <param name="packagePath">Path to the package</param>
-            <param name="settings">The settings</param>
-        </member>
-        <member name="M:Cake.Common.Tools.OctopusDeploy.OctopusDeployAliases.OctoPush(Cake.Core.ICakeContext,System.String,System.String,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Common.Tools.OctopusDeploy.OctopusPushSettings)">
-            <summary>
-            Pushes the specified packages to the Octopus Deploy repository
-            </summary>
-            <param name="context">The cake context</param>
-            <param name="server">The Octopus server URL</param>
-            <param name="apiKey">The user's API key</param>
-            <param name="packagePaths">Paths to the packages</param>
-            <param name="settings">The settings</param>
         </member>
         <member name="T:Cake.Common.Tools.OctopusDeploy.CreateReleaseSettings">
             <summary>
@@ -14483,41 +13809,6 @@
             Gets or sets a value indicating whether the Ignore Existing flag.
             </summary>
         </member>
-        <member name="T:Cake.Common.Tools.OctopusDeploy.OctopusDeployPusher">
-            <summary>
-            The Octopus Deploy package push runner
-            </summary>
-        </member>
-        <member name="M:Cake.Common.Tools.OctopusDeploy.OctopusDeployPusher.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Tools.OctopusDeploy.OctopusDeployPusher"/> class.
-            </summary>
-            <param name="fileSystem">The file system.</param>
-            <param name="environment">The environment.</param>
-            <param name="processRunner">The process runner.</param>
-            <param name="tools">The tool locator.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.OctopusDeploy.OctopusDeployPusher.GetToolName">
-            <summary>
-            Gets the name of the tool.
-            </summary>
-            <returns>The name of the tool.</returns>
-        </member>
-        <member name="M:Cake.Common.Tools.OctopusDeploy.OctopusDeployPusher.GetToolExecutableNames">
-            <summary>
-            Gets the possible names of the tool executable.
-            </summary>
-            <returns>The tool executable name.</returns>
-        </member>
-        <member name="M:Cake.Common.Tools.OctopusDeploy.OctopusDeployPusher.PushPackage(System.String,System.String,Cake.Core.IO.FilePath[],Cake.Common.Tools.OctopusDeploy.OctopusPushSettings)">
-            <summary>
-            Pushes the specified packages to Octopus Deploy internal repository
-            </summary>
-            <param name="server">The Octopus server URL</param>
-            <param name="apiKey">The user's API key</param>
-            <param name="packagePaths">Paths to the packages to be pushed</param>
-            <param name="settings">The settings</param>
-        </member>
         <member name="T:Cake.Common.Tools.OctopusDeploy.OctopusDeployReleaseCreator">
             <summary>
             The Octopus Deploy release creator runner
@@ -14550,16 +13841,6 @@
             Gets the possible names of the tool executable.
             </summary>
             <returns>The tool executable name.</returns>
-        </member>
-        <member name="T:Cake.Common.Tools.OctopusDeploy.OctopusPushSettings">
-            <summary>
-            Contains settings used by <see cref="M:Cake.Common.Tools.OctopusDeploy.OctopusDeployPusher.PushPackage(System.String,System.String,Cake.Core.IO.FilePath[],Cake.Common.Tools.OctopusDeploy.OctopusPushSettings)"/>.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Tools.OctopusDeploy.OctopusPushSettings.ReplaceExisting">
-            <summary>
-            Gets or sets a value indicating whether to overwrite an existing package
-            </summary>
         </member>
         <member name="T:Cake.Common.Tools.OpenCover.OpenCoverAliases">
             <summary>
@@ -14663,11 +13944,6 @@
             </summary>
             <value>The excluded file filters.</value>
         </member>
-        <member name="P:Cake.Common.Tools.OpenCover.OpenCoverSettings.SkipAutoProps">
-            <summary>
-            Gets or sets a value indicating whether or not auto-implemented properties should be skipped.
-            </summary>
-        </member>
         <member name="P:Cake.Common.Tools.OpenCover.OpenCoverSettings.Register">
             <summary>
             Gets or sets the register option
@@ -14676,11 +13952,6 @@
         <member name="P:Cake.Common.Tools.OpenCover.OpenCoverSettings.ReturnTargetCodeOffset">
             <summary>
             Gets or sets the Return target code offset to be used
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Tools.OpenCover.OpenCoverSettings.OldStyle">
-            <summary>
-            Gets or sets a value indicating whether the OldStyle option for OpenCover should be used
             </summary>
         </member>
         <member name="T:Cake.Common.Tools.OpenCover.OpenCoverSettingsExtensions">
@@ -15129,15 +14400,6 @@
             </summary>
             <param name="context">The context.</param>
             <param name="settings">The settings.</param>
-            <example>
-            <code>
-            RoundhouseMigrate(new RoundhouseSettings{
-                ServerName = "Sql2008R2",
-                DatabaseName = "AdventureWorks2008R2",
-                SqlFilesDirectory = "./src/sql"
-                });
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.Roundhouse.RoundhouseAliases.RoundhouseDrop(Cake.Core.ICakeContext,Cake.Common.Tools.Roundhouse.RoundhouseSettings)">
             <summary>
@@ -15145,14 +14407,6 @@
             </summary>
             <param name="context">The context.</param>
             <param name="settings">The settings.</param>
-            <example>
-            <code>
-            RoundhouseDrop(new RoundhouseSettings{
-                ServerName = "Sql2008R2",
-                DatabaseName = "AdventureWorks2008R2"
-                });
-            </code>
-            </example>
         </member>
         <member name="T:Cake.Common.Tools.Roundhouse.RoundhouseRunner">
             <summary>
@@ -16276,419 +15530,6 @@
             Gets or sets a value indicating whether to show verbose output.
             </summary>
         </member>
-        <member name="T:Cake.Common.Tools.WiX.Heat.WiXGenerateType">
-            <summary>
-            Type of elements to generate
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXGenerateType.Components">
-            <summary>
-            Generates components
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXGenerateType.Container">
-            <summary>
-            Generates a container
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXGenerateType.PayloadGroup">
-            <summary>
-            Generates a payload group
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXGenerateType.Layout">
-            <summary>
-            Generates a layout
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Tools.WiX.Heat.WiXHarvestType">
-            <summary>
-            The type of object file to harvest from.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXHarvestType.Dir">
-            <summary>
-            Harvest a directory.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXHarvestType.File">
-            <summary>
-            Harvest a file
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXHarvestType.Project">
-            <summary>
-            Harvest outputs of a Visual Studio project.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXHarvestType.Website">
-            <summary>
-            Harvest an IIS web site.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXHarvestType.Perf">
-            <summary>
-            Harvest performance counters from a category.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXHarvestType.Reg">
-            <summary>
-            Harvest registry information from a reg file.
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Tools.WiX.Heat.HeatRunner">
-            <summary>
-            The WiX Heat runner.
-            </summary>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.Heat.HeatRunner.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Common.Tools.WiX.Heat.HeatRunner"/> class.
-            </summary>
-            <param name="fileSystem">The file system.</param>
-            <param name="environment">The environment.</param>
-            <param name="processRunner">The process runner.</param>
-            <param name="toolService">The tool service.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.Heat.HeatRunner.Run(Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType,Cake.Common.Tools.WiX.Heat.HeatSettings)">
-            <summary>
-            Runs the Wix Heat runner for the specified directory path.
-            </summary>
-            <param name="directoryPath">The directory path.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-            <param name="settings">The settings.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.Heat.HeatRunner.Run(System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType,Cake.Common.Tools.WiX.Heat.HeatSettings)">
-            <summary>
-            Runs the Wix Heat runner for the specified directory path.
-            </summary>
-            <param name="objectFiles">The object files.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-            <param name="settings">The settings.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.Heat.HeatRunner.Run(System.String,Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType,Cake.Common.Tools.WiX.Heat.HeatSettings)">
-            <summary>
-            Runs the Wix Heat runner for the specified directory path.
-            </summary>
-            <param name="harvestTarget">The harvest target.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-            <param name="settings">The settings.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.Heat.HeatRunner.GetToolName">
-            <summary>
-            Gets the name of the tool.
-            </summary>
-            <returns> The name of the tool. </returns>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.Heat.HeatRunner.GetToolExecutableNames">
-            <summary>
-            Gets the possible names of the tool executable.
-            </summary>
-            <returns> The tool executable name. </returns>
-        </member>
-        <member name="T:Cake.Common.Tools.WiX.Heat.HeatSettings">
-            <summary>
-            Contains settings used by <see cref="T:Cake.Common.Tools.WiX.Heat.HeatRunner"/>.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Extensions">
-            <summary>
-            Gets or sets the WiX extensions to use.
-            </summary>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.NoLogo">
-            <summary>
-            Gets or sets a value indicating whether [no logo].
-            </summary>
-            <value>
-              <c>true</c> if [no logo]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.SuppressSpecificWarnings">
-            <summary>
-            Gets or sets the suppress specific warnings.
-            </summary>
-            <value>
-            The suppress specific warnings.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.TreatSpecificWarningsAsErrors">
-            <summary>
-            Gets or sets the treat specific warnings as errors.
-            </summary>
-            <value>
-            The treat specific warnings as errors.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Verbose">
-            <summary>
-            Gets or sets a value indicating whether output is verbose.
-            </summary>
-            <value>
-              <c>true</c> if verbose; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.AutogeneratedGuid">
-            <summary>
-            Gets or sets a value indicating whether to auto generate <see cref="T:System.Guid"/> at compile time.
-            </summary>
-            <value>
-            <c>true</c> if [autogenerated unique identifier]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.GenerateGuid">
-            <summary>
-            Gets or sets a value indicating whether all components are given a guid.
-            </summary>
-            <value>
-            <c>true</c> if [generate unique identifier]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.OutputFile">
-            <summary>
-            Gets or sets the output file.
-            </summary>
-            <value>
-            The output file.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.SuppressFragments">
-            <summary>
-            Gets or sets a value indicating whether to suppress the
-            generation of fragments for directories and components.
-            </summary>
-            <value>
-              <c>true</c> if [suppress fragments]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.SuppressUniqueIds">
-            <summary>
-            Gets or sets a value indicating whether to suppress unique identifiers
-            for files, components, and directories.
-            </summary>
-            <value>
-              <c>true</c> if [suppress unique ids]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Transform">
-            <summary>
-            Gets or sets the transform to apply to harvested files.
-            </summary>
-            <value>
-            The transform.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.File">
-            <summary>
-            Gets or sets the file.
-            </summary>
-            <value>
-            The file.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.ComponentGroupName">
-            <summary>
-            Gets or sets the name of the component group.
-            </summary>
-            <value>
-            The name of the component group.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.DirectoryReferenceId">
-            <summary>
-            Gets or sets the directory reference identifier for generated directory elements.
-            </summary>
-            <value>
-            The directory reference identifier.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.PreprocessorVariable">
-            <summary>
-            Gets or sets the preprocessor variable.
-            </summary>
-            <value>
-            The preprocessor variable.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.GenerateBinderVariables">
-            <summary>
-            Gets or sets a value indicating whether generate binder variables instead
-            of preprocessor variables.
-            </summary>
-            <value>
-            <c>true</c> if [generate binder variables]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.SuppressCom">
-            <summary>
-            Gets or sets a value indicating whether the COM elements.
-            </summary>
-            <value>
-              <c>true</c> if [suppress COM]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.SuppressRegistry">
-            <summary>
-            Gets or sets a value indicating whether [suppress registry].
-            </summary>
-            <value>
-              <c>true</c> if [suppress registry]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.SuppressRootDirectory">
-            <summary>
-            Gets or sets a value indicating whether [suppress root directory].
-            </summary>
-            <value>
-            <c>true</c> if [suppress root directory]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Configuration">
-            <summary>
-            Gets or sets the configuration to set when harvesting the project.
-            </summary>
-            <value>
-            The configuration.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.DirectoryId">
-            <summary>
-            Gets or sets the overridden directory identifier for generated directory elements.
-            </summary>
-            <value>
-            The directory identifier.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Generate">
-            <summary>
-            Gets or sets the type of elements to generate.
-            </summary>
-            <value>
-            The generate.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.GenerateGuidWithoutBraces">
-            <summary>
-            Gets or sets a value indicating whether to generate guids without curly braces.
-            </summary>
-            <value>
-            <c>true</c> if generate guids without curly braces; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.KeepEmptyDirectories">
-            <summary>
-            Gets or sets a value indicating whether to keep empty directories.
-            </summary>
-            <value>
-            <c>true</c> if keep empty directories; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Platform">
-            <summary>
-            Gets or sets the platform to set when harvesting the project.
-            </summary>
-            <value>
-            The platform.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.OutputGroup">
-            <summary>
-            Gets or sets the output group of Visual Studio project.
-            </summary>
-            <value>
-            The output group.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.ProjectName">
-            <summary>
-            Gets or sets the overridden project name to use in variables.
-            </summary>
-            <value>
-            The name of the project.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Template">
-            <summary>
-            Gets or sets the template to use when harvesting.
-            </summary>
-            <value>
-            The template.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.Indent">
-            <summary>
-            Gets or sets the indentation multiplier, overrides default of 4.
-            </summary>
-            <value>
-            The indent.
-            </value>
-        </member>
-        <member name="P:Cake.Common.Tools.WiX.Heat.HeatSettings.SuppressVb6Com">
-            <summary>
-            Gets or sets a value indicating whether to suppress VB6 COM registration entries.
-            </summary>
-            <value>
-              <c>true</c> if suppress VB6 COM registration entries; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="T:Cake.Common.Tools.WiX.Heat.WiXOutputGroupType">
-            <summary>
-            The Output Group of Visual Studio project
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXOutputGroupType.Binaries">
-            <summary>
-            OutputGroup: <c>Binaries</c>
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXOutputGroupType.Symbols">
-            <summary>
-            OutputGroup: <c>Symbols</c>
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXOutputGroupType.Documents">
-            <summary>
-            OutputGroup: <c>Documents</c>
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXOutputGroupType.Satallites">
-            <summary>
-            OutputGroup: <c>Satallites</c>
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXOutputGroupType.Sources">
-            <summary>
-            OutputGroup: <c>Sources</c>
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXOutputGroupType.Content">
-            <summary>
-            OutputGroup: <c>Content</c>
-            </summary>
-        </member>
-        <member name="T:Cake.Common.Tools.WiX.Heat.WiXTemplateType">
-            <summary>
-            Template type to use for harvesting.
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXTemplateType.Fragment">
-            <summary>
-            TemplateType: <c>Fragment</c>
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXTemplateType.Module">
-            <summary>
-            TemplateType: <c>Module</c>
-            </summary>
-        </member>
-        <member name="F:Cake.Common.Tools.WiX.Heat.WiXTemplateType.Product">
-            <summary>
-            TemplateType: <c>Product</c>
-            </summary>
-        </member>
         <member name="T:Cake.Common.Tools.WiX.LightRunner">
             <summary>
             The WiX Light runner.
@@ -16830,104 +15671,6 @@
             </example>
             <param name="context">The context.</param>
             <param name="objectFiles">The object files.</param>
-            <param name="settings">The settings.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.WiXAliases.WiXHeat(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType)">
-            <summary>
-            Harvests files in the provided object files.
-            </summary>
-            <example>
-            <code>
-            DirectoryPath harvestDirectory = Directory("./src");
-            var filePath = new FilePath("Wix.Directory.wxs");
-            WiXHeat(harvestDirectory, filePath, WiXHarvestType.Dir);
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="directoryPath">The object files.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.WiXAliases.WiXHeat(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType,Cake.Common.Tools.WiX.Heat.HeatSettings)">
-            <summary>
-            Harvests files in the provided directory path.
-            </summary>
-            <example>
-            <code>
-            DirectoryPath harvestDirectory = Directory("./src");
-            var filePath = File("Wix.Directory.wxs");
-            Information(MakeAbsolute(harvestDirectory).FullPath);
-            WiXHeat(harvestDirectory, filePath, WiXHarvestType.Dir, new HeatSettings { NoLogo = true });
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="directoryPath">The directory path.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-            <param name="settings">The settings.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.WiXAliases.WiXHeat(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType)">
-            <summary>
-            Harvests from the desired files.
-            </summary>
-            <example>
-            <code>
-            var harvestFile = File("./tools/Cake/Cake.Core.dll");
-            var filePath = File("Wix.File.wxs");
-            WiXHeat(harvestFile, filePath, WiXHarvestType.File);
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="objectFiles">The object files.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.WiXAliases.WiXHeat(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType,Cake.Common.Tools.WiX.Heat.HeatSettings)">
-            <summary>
-            Harvests from the desired files.
-            </summary>
-            <example>
-            <code>
-            var harvestFiles = File("./tools/Cake/*.dll");
-            var filePath = File("Wix.File.wxs");
-            WiXHeat(harvestFiles, filePath, WiXHarvestType.File, new HeatSettings { NoLogo = true });
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="objectFiles">The object files.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-            <param name="settings">The settings.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.WiXAliases.WiXHeat(Cake.Core.ICakeContext,System.String,Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType)">
-            <summary>
-            Harvests files for a website or performance.
-            </summary>
-            <example>
-            <code>
-            var filePath = File("Wix.Website.wxs");
-            WiXHeat("Default Web Site", filePath, WiXHarvestType.Website);
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="harvestTarget">The harvest target.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
-        </member>
-        <member name="M:Cake.Common.Tools.WiX.WiXAliases.WiXHeat(Cake.Core.ICakeContext,System.String,Cake.Core.IO.FilePath,Cake.Common.Tools.WiX.Heat.WiXHarvestType,Cake.Common.Tools.WiX.Heat.HeatSettings)">
-            <summary>
-            Harvests files for a website or performance.
-            </summary>
-            <example>
-            <code>
-            var filePath = File("Wix.Website.wxs");
-            WiXHeat("Default Web Site", filePath, WiXHarvestType.Website, new HeatSettings { NoLogo = true });
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="harvestTarget">The harvest target.</param>
-            <param name="outputFile">The output file.</param>
-            <param name="harvestType">The WiX harvest type.</param>
             <param name="settings">The settings.</param>
         </member>
         <member name="T:Cake.Common.Tools.XBuild.XBuildSettingsExtensions">
@@ -17159,11 +15902,6 @@
             </summary>
             <param name="context">The context.</param>
             <param name="pattern">The pattern.</param>
-            <example>
-            <code>
-            XUnit("./src/**/bin/Release/*.Tests.dll");
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.XUnit.XUnitAliases.XUnit(Cake.Core.ICakeContext,System.String,Cake.Common.Tools.XUnit.XUnitSettings)">
             <summary>
@@ -17172,15 +15910,6 @@
             <param name="context">The context.</param>
             <param name="pattern">The pattern.</param>
             <param name="settings">The settings.</param>
-            <example>
-            <code>
-            XUnit("./src/**/bin/Release/*.Tests.dll",
-                 new XUnitSettings {
-                    HtmlReport = true,
-                    OutputDirectory = "./build"
-                });
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.XUnit.XUnitAliases.XUnit(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
@@ -17188,16 +15917,6 @@
             </summary>
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
-            <example>
-            <code>
-            XUnit(new []{
-                "./src/Cake.Common.Tests/bin/Release/Cake.Common.Tests.dll",
-                "./src/Cake.Core.Tests/bin/Release/Cake.Core.Tests.dll",
-                "./src/Cake.NuGet.Tests/bin/Release/Cake.NuGet.Tests.dll",
-                "./src/Cake.Tests/bin/Release/Cake.Tests.dll"
-                });
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.XUnit.XUnitAliases.XUnit(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath})">
             <summary>
@@ -17205,12 +15924,6 @@
             </summary>
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
-            <example>
-            <code>
-            var testAssemblies = GetFiles("./src/**/bin/Release/*.Tests.dll");
-            XUnit(testAssemblies);
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.XUnit.XUnitAliases.XUnit(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{System.String},Cake.Common.Tools.XUnit.XUnitSettings)">
             <summary>
@@ -17219,20 +15932,6 @@
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
             <param name="settings">The settings.</param>
-            <example>
-            <code>
-            XUnit(new []{
-                "./src/Cake.Common.Tests/bin/Release/Cake.Common.Tests.dll",
-                "./src/Cake.Core.Tests/bin/Release/Cake.Core.Tests.dll",
-                "./src/Cake.NuGet.Tests/bin/Release/Cake.NuGet.Tests.dll",
-                "./src/Cake.Tests/bin/Release/Cake.Tests.dll"
-                 },
-                 new XUnitSettings {
-                    HtmlReport = true,
-                    OutputDirectory = "./build"
-                });
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.XUnit.XUnitAliases.XUnit(Cake.Core.ICakeContext,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},Cake.Common.Tools.XUnit.XUnitSettings)">
             <summary>
@@ -17241,16 +15940,6 @@
             <param name="context">The context.</param>
             <param name="assemblies">The assemblies.</param>
             <param name="settings">The settings.</param>
-            <example>
-            <code>
-            var testAssemblies = GetFiles("./src/**/bin/Release/*.Tests.dll");
-            XUnit(testAssemblies,
-                 new XUnitSettings {
-                    HtmlReport = true,
-                    OutputDirectory = "./build"
-                });
-            </code>
-            </example>
         </member>
         <member name="T:Cake.Common.Tools.XUnit.XUnitSettings">
             <summary>
@@ -17391,14 +16080,6 @@
             Gets or sets the output directory.
             </summary>
             <value>The output directory.</value>
-        </member>
-        <member name="P:Cake.Common.Tools.XUnit.XUnit2Settings.NUnitReport">
-            <summary>
-            Gets or sets a value indicating whether an NUnit style XML report should be generated.
-            </summary>
-            <value>
-              <c>true</c> if an NUnit Style XML report should be generated; otherwise, <c>false</c>.
-            </value>
         </member>
         <member name="P:Cake.Common.Tools.XUnit.XUnit2Settings.XmlReport">
             <summary>
@@ -17672,6 +16353,33 @@
             http://nant.sourceforge.net/release/latest/help/tasks/xmlpoke.html
             </para>
             </example>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPoke(Cake.Core.ICakeContext,System.String,System.String,System.String)">
+            <summary>
+            Set the value of, or remove, target nodes.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceXml">The source xml to transform.</param>
+            <param name="xpath">The xpath of the nodes to set.</param>
+            <param name="value">The value to set too. Leave blank to remove the selected nodes.</param>
+            <returns>Resulting XML.</returns>
+            <remarks>
+            The method is now obsolete replaced by <see cref="M:Cake.Common.Xml.XmlPokeAliases.XmlPokeString(Cake.Core.ICakeContext,System.String,System.String,System.String)"/>
+            </remarks>
+        </member>
+        <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPoke(Cake.Core.ICakeContext,System.String,System.String,System.String,Cake.Common.Xml.XmlPokeSettings)">
+            <summary>
+            Set the value of, or remove, target nodes.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceXml">The source xml to transform.</param>
+            <param name="xpath">The xpath of the nodes to set.</param>
+            <param name="value">The value to set too. Leave blank to remove the selected nodes.</param>
+            <param name="settings">Additional settings to tweak Xml Poke behavior.</param>
+            <returns>Resulting XML.</returns>
+            <remarks>
+            The method is now obsolete replaced by <see cref="M:Cake.Common.Xml.XmlPokeAliases.XmlPokeString(Cake.Core.ICakeContext,System.String,System.String,System.String,Cake.Common.Xml.XmlPokeSettings)"/>
+            </remarks>
         </member>
         <member name="M:Cake.Common.Xml.XmlPokeAliases.XmlPokeString(Cake.Core.ICakeContext,System.String,System.String,System.String)">
             <summary>
@@ -18287,64 +16995,6 @@
             <param name="address">The URL of the resource to download.</param>
             <param name="outputPath">The output path.</param>
         </member>
-        <member name="M:Cake.Common.Net.HttpAliases.UploadFile(Cake.Core.ICakeContext,System.Uri,Cake.Core.IO.FilePath)">
-            <summary>
-            Uploads the specified file via a HTTP POST to the specified uri using multipart/form-data.
-            </summary>
-            <example>
-            <code>
-            var address = new Uri("http://www.example.org/upload");
-            UploadFile(address, @"path/to/file.txt");
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="address">The URL of the upload resource.</param>
-            <param name="filePath">The file to upload.</param>
-        </member>
-        <member name="M:Cake.Common.Net.HttpAliases.UploadFile(Cake.Core.ICakeContext,System.String,Cake.Core.IO.FilePath)">
-            <summary>
-            Uploads the specified file via a HTTP POST to the specified uri using multipart/form-data.
-            </summary>
-            <example>
-            <code>
-            var address = "http://www.example.org/upload";
-            UploadFile(address, @"path/to/file.txt");
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="address">The URL of the upload resource.</param>
-            <param name="filePath">The file to upload.</param>
-        </member>
-        <member name="M:Cake.Common.Net.HttpAliases.UploadFile(Cake.Core.ICakeContext,System.Uri,System.Byte[],System.String)">
-            <summary>
-            Uploads the specified byte array via a HTTP POST to the specified uri using multipart/form-data.
-            </summary>
-            <example>
-            <code>
-            var address = new Uri("http://www.example.org/upload");
-            UploadFile(address, @"path/to/file.txt");
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="address">The URL of the upload resource.</param>
-            <param name="data">The data to upload.</param>
-            <param name="fileName">The filename to give the uploaded data</param>
-        </member>
-        <member name="M:Cake.Common.Net.HttpAliases.UploadFile(Cake.Core.ICakeContext,System.String,System.Byte[],System.String)">
-            <summary>
-            Uploads the specified byte array via a HTTP POST to the specified uri using multipart/form-data.
-            </summary>
-            <example>
-            <code>
-            var address = "http://www.example.org/upload";
-            UploadFile(address, @"path/to/file.txt");
-            </code>
-            </example>
-            <param name="context">The context.</param>
-            <param name="address">The URL of the upload resource.</param>
-            <param name="data">The data to upload.</param>
-            <param name="fileName">The filename to give the uploaded data</param>
-        </member>
         <member name="T:Cake.Common.Tools.XBuild.XBuildSettings">
             <summary>
             Contains settings used by <see cref="T:Cake.Common.Tools.XBuild.XBuildRunner"/>.
@@ -18471,11 +17121,6 @@
             </summary>
             <param name="context">The context.</param>
             <param name="solution">The solution to build.</param>
-            <example>
-            <code>
-            XBuild("./src/Cake.sln");
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.XBuild.XBuildAliases.XBuild(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,System.Action{Cake.Common.Tools.XBuild.XBuildSettings})">
             <summary>
@@ -18484,14 +17129,6 @@
             <param name="context">The context.</param>
             <param name="solution">The solution to build.</param>
             <param name="configurator">The settings configurator.</param>
-            <example>
-            <code>
-            XBuild("./src/Cake.sln", configurator =>
-                configurator.SetConfiguration("Debug")
-                    .SetVerbosity(Verbosity.Minimal)
-                    .UseToolVersion(XBuildToolVersion.NET40));
-            </code>
-            </example>
         </member>
         <member name="M:Cake.Common.Tools.XBuild.XBuildAliases.XBuild(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Common.Tools.XBuild.XBuildSettings)">
             <summary>
@@ -18500,15 +17137,6 @@
             <param name="context">The context.</param>
             <param name="solution">The solution to build.</param>
             <param name="settings">The settings.</param>
-            <example>
-            <code>
-            XBuild("./src/Cake.sln", new XBuildSettings {
-                Verbosity = Verbosity.Minimal,
-                ToolVersion = XBuildToolVersion.NET40,
-                Configuration = "Release"
-                });
-            </code>
-            </example>
         </member>
         <member name="T:Cake.Common.Tools.DotNetBuildSettings">
             <summary>
@@ -18575,11 +17203,11 @@
             </summary>
             <example>
             <code>
-            DotNetBuild("./project/project.sln", settings =>
+            DotNetBuild("./project/project.sln", settings => 
                 settings.SetConfiguration("Debug")
                     .SetVerbosity(Core.Diagnostics.Verbosity.Minimal)
                     .WithTarget("Build")
-                    .WithProperty("TreatWarningsAsErrors","true"));
+                    .WithProperty("TreatWarningsAsErrors","true")
             </code>
             </example>
             <param name="context">The context.</param>
@@ -18961,7 +17589,7 @@
         </member>
         <member name="F:Cake.Common.Xml.XmlDtdProcessing.Ignore">
             <summary>
-            The DTD will be ignored. Any reference to a general entity in the XML document
+            The DTD will be ignored. Any reference to a general entity in the XML document 
             will cause an exception (except for the predefined entities &lt; &gt; &amp; &quot; and &apos;).
             The DocumentType node will not be reported.
             </summary>

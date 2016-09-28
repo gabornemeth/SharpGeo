@@ -221,161 +221,6 @@
             </summary>
             <value>The module type.</value>
         </member>
-        <member name="T:Cake.Core.CakeContextAdapter">
-            <summary>
-            Adapter to ensure correct conversion of Cake Context in derived classes.
-            </summary>
-        </member>
-        <member name="M:Cake.Core.CakeContextAdapter.#ctor(Cake.Core.ICakeContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Core.CakeContextAdapter"/> class.
-            </summary>
-            <param name="context">The Cake Context</param>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.FileSystem">
-            <summary>
-            Gets the file system.
-            </summary>
-            <value>
-            The file system.
-            </value>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.Environment">
-            <summary>
-            Gets the environment.
-            </summary>
-            <value>
-            The environment.
-            </value>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.Globber">
-            <summary>
-            Gets the globber.
-            </summary>
-            <value>
-            The globber.
-            </value>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.Log">
-            <summary>
-            Gets the log.
-            </summary>
-            <value>
-            The log.
-            </value>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.Arguments">
-            <summary>
-            Gets the arguments.
-            </summary>
-            <value>
-            The arguments.
-            </value>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.ProcessRunner">
-            <summary>
-            Gets the process runner.
-            </summary>
-            <value>
-            The process runner.
-            </value>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.Registry">
-            <summary>
-            Gets the registry.
-            </summary>
-            <value>
-            The registry.
-            </value>
-        </member>
-        <member name="P:Cake.Core.CakeContextAdapter.Tools">
-            <summary>
-            Gets the tool locator.
-            </summary>
-            <value>
-            The tool locator.
-            </value>
-        </member>
-        <member name="T:Cake.Core.CakePlatform">
-            <summary>
-            Represents the platform that Cake is running on.
-            </summary>
-        </member>
-        <member name="T:Cake.Core.ICakePlatform">
-            <summary>
-            Represents the platform that Cake is running on.
-            </summary>
-        </member>
-        <member name="P:Cake.Core.ICakePlatform.Family">
-            <summary>
-            Gets the platform family.
-            </summary>
-            <value>The platform family.</value>
-        </member>
-        <member name="P:Cake.Core.ICakePlatform.Is64Bit">
-            <summary>
-            Gets a value indicating whether or not the current operative system is 64 bit.
-            </summary>
-            <value>
-              <c>true</c> if current operative system is 64 bit; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="M:Cake.Core.CakePlatform.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Core.CakePlatform"/> class.
-            </summary>
-        </member>
-        <member name="P:Cake.Core.CakePlatform.Family">
-            <summary>
-            Gets the platform family.
-            </summary>
-            <value>The platform family.</value>
-        </member>
-        <member name="P:Cake.Core.CakePlatform.Is64Bit">
-            <summary>
-            Gets a value indicating whether or not the current platform is 64 bit.
-            </summary>
-            <value>
-            <c>true</c> if current platform is 64 bit; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="T:Cake.Core.CakeRuntime">
-            <summary>
-            Represents the runtime that Cake is running in.
-            </summary>
-        </member>
-        <member name="T:Cake.Core.ICakeRuntime">
-            <summary>
-            Represents the runtime that Cake is running in.
-            </summary>
-        </member>
-        <member name="P:Cake.Core.ICakeRuntime.TargetFramework">
-            <summary>
-            Gets the target .NET framework version that the current AppDomain is targeting.
-            </summary>
-            <returns>The target framework.</returns>
-        </member>
-        <member name="P:Cake.Core.ICakeRuntime.CakeVersion">
-            <summary>
-            Gets the version of Cake executing the script.
-            </summary>
-            <returns>The Cake.exe version.</returns>
-        </member>
-        <member name="M:Cake.Core.CakeRuntime.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Core.CakeRuntime"/> class.
-            </summary>
-        </member>
-        <member name="P:Cake.Core.CakeRuntime.TargetFramework">
-            <summary>
-            Gets the target .NET framework version that the current AppDomain is targeting.
-            </summary>
-        </member>
-        <member name="P:Cake.Core.CakeRuntime.CakeVersion">
-            <summary>
-            Gets the version of Cake executing the script.
-            </summary>
-        </member>
         <member name="T:Cake.Core.Composition.ICakeContainerRegistry">
             <summary>
             Represents a container registry used to register types and instances with Cake.
@@ -606,7 +451,7 @@
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.ICakeEngine.RegisterTeardownAction(System.Action{Cake.Core.ITeardownContext})">
+        <member name="M:Cake.Core.ICakeEngine.RegisterTeardownAction(System.Action{Cake.Core.ICakeContext})">
             <summary>
             Allows registration of an action that's executed after all other tasks have been run.
             If a setup action or a task fails with or without recovery, the specified teardown action will still be executed.
@@ -622,14 +467,14 @@
             <param name="target">The target to run.</param>
             <returns>The resulting report.</returns>
         </member>
-        <member name="M:Cake.Core.ICakeEngine.RegisterTaskSetupAction(System.Action{Cake.Core.ITaskSetupContext})">
+        <member name="M:Cake.Core.ICakeEngine.RegisterTaskSetupAction(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskSetupContext})">
             <summary>
             Allows registration of an action that's executed before each task is run.
             If the task setup fails, the task will not be executed but the task's teardown will be performed.
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.ICakeEngine.RegisterTaskTeardownAction(System.Action{Cake.Core.ITaskTeardownContext})">
+        <member name="M:Cake.Core.ICakeEngine.RegisterTaskTeardownAction(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext})">
             <summary>
             Allows registration of an action that's executed after each task has been run.
             If a task setup action or a task fails with or without recovery, the specified task teardown action will still be executed.
@@ -664,7 +509,7 @@
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.CakeEngine.RegisterTeardownAction(System.Action{Cake.Core.ITeardownContext})">
+        <member name="M:Cake.Core.CakeEngine.RegisterTeardownAction(System.Action{Cake.Core.ICakeContext})">
             <summary>
             Allows registration of an action that's executed after all other tasks have been run.
             If a setup action or a task fails with or without recovery, the specified teardown action will still be executed.
@@ -680,14 +525,14 @@
             <param name="target">The target to run.</param>
             <returns>The resulting report.</returns>
         </member>
-        <member name="M:Cake.Core.CakeEngine.RegisterTaskSetupAction(System.Action{Cake.Core.ITaskSetupContext})">
+        <member name="M:Cake.Core.CakeEngine.RegisterTaskSetupAction(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskSetupContext})">
             <summary>
             Allows registration of an action that's executed before each task is run.
             If the task setup fails, the task will not be executed but the task's teardown will be performed.
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.CakeEngine.RegisterTaskTeardownAction(System.Action{Cake.Core.ITaskTeardownContext})">
+        <member name="M:Cake.Core.CakeEngine.RegisterTaskTeardownAction(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext})">
             <summary>
             Allows registration of an action that's executed after each task has been run.
             If a task setup action or a task fails with or without recovery, the specified task teardown action will still be executed.
@@ -1021,11 +866,10 @@
             <param name="fileSystem">The file system.</param>
             <param name="environment">The environment.</param>
         </member>
-        <member name="M:Cake.Core.Configuration.CakeConfigurationProvider.CreateConfiguration(Cake.Core.IO.DirectoryPath,System.Collections.Generic.IDictionary{System.String,System.String})">
+        <member name="M:Cake.Core.Configuration.CakeConfigurationProvider.CreateConfiguration(System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Creates a configuration from the provided arguments.
             </summary>
-            <param name="path">The directory to look for the configuration file.</param>
             <param name="arguments">The arguments.</param>
             <returns>The created configuration.</returns>
         </member>
@@ -1046,12 +890,12 @@
             <param name="action">The action.</param>
             <param name="context">The context.</param>
         </member>
-        <member name="M:Cake.Core.IExecutionStrategy.PerformTeardown(System.Action{Cake.Core.ITeardownContext},Cake.Core.ITeardownContext)">
+        <member name="M:Cake.Core.IExecutionStrategy.PerformTeardown(System.Action{Cake.Core.ICakeContext},Cake.Core.ICakeContext)">
             <summary>
             Performs the teardown.
             </summary>
             <param name="action">The action.</param>
-            <param name="teardownContext">The context.</param>
+            <param name="context">The context.</param>
         </member>
         <member name="M:Cake.Core.IExecutionStrategy.Execute(Cake.Core.CakeTask,Cake.Core.ICakeContext)">
             <summary>
@@ -1086,19 +930,21 @@
             </summary>
             <param name="action">The action.</param>
         </member>
-        <member name="M:Cake.Core.IExecutionStrategy.PerformTaskSetup(System.Action{Cake.Core.ITaskSetupContext},Cake.Core.ITaskSetupContext)">
+        <member name="M:Cake.Core.IExecutionStrategy.PerformTaskSetup(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskSetupContext},Cake.Core.ICakeContext,Cake.Core.ITaskSetupContext)">
             <summary>
             Performs the specified setup action before each task is invoked.
             </summary>
             <param name="action">The action.</param>
-            <param name="taskSetupContext">The context.</param>
+            <param name="context">The context.</param>
+            <param name="setupContext">The setup context.</param>
         </member>
-        <member name="M:Cake.Core.IExecutionStrategy.PerformTaskTeardown(System.Action{Cake.Core.ITaskTeardownContext},Cake.Core.ITaskTeardownContext)">
+        <member name="M:Cake.Core.IExecutionStrategy.PerformTaskTeardown(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext},Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext)">
             <summary>
             Performs the specified teardown action after each task is invoked.
             </summary>
             <param name="action">The action.</param>
-            <param name="taskTeardownContext">The context.</param>
+            <param name="context">The context.</param>
+            <param name="teardownContext">The teardown context.</param>
         </member>
         <member name="M:Cake.Core.DefaultExecutionStrategy.#ctor(Cake.Core.Diagnostics.ICakeLog)">
             <summary>
@@ -1113,12 +959,12 @@
             <param name="action">The action.</param>
             <param name="context">The context.</param>
         </member>
-        <member name="M:Cake.Core.DefaultExecutionStrategy.PerformTeardown(System.Action{Cake.Core.ITeardownContext},Cake.Core.ITeardownContext)">
+        <member name="M:Cake.Core.DefaultExecutionStrategy.PerformTeardown(System.Action{Cake.Core.ICakeContext},Cake.Core.ICakeContext)">
             <summary>
             Performs the teardown.
             </summary>
             <param name="action">The action.</param>
-            <param name="teardownContext">The context.</param>
+            <param name="context">The context.</param>
         </member>
         <member name="M:Cake.Core.DefaultExecutionStrategy.Execute(Cake.Core.CakeTask,Cake.Core.ICakeContext)">
             <summary>
@@ -1153,19 +999,21 @@
             </summary>
             <param name="action">The action.</param>
         </member>
-        <member name="M:Cake.Core.DefaultExecutionStrategy.PerformTaskSetup(System.Action{Cake.Core.ITaskSetupContext},Cake.Core.ITaskSetupContext)">
+        <member name="M:Cake.Core.DefaultExecutionStrategy.PerformTaskSetup(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskSetupContext},Cake.Core.ICakeContext,Cake.Core.ITaskSetupContext)">
             <summary>
             Performs the specified setup action before each task is invoked.
             </summary>
             <param name="action">The action.</param>
-            <param name="taskSetupContext">The context.</param>
+            <param name="context">The context.</param>
+            <param name="setupContext">The setup context.</param>
         </member>
-        <member name="M:Cake.Core.DefaultExecutionStrategy.PerformTaskTeardown(System.Action{Cake.Core.ITaskTeardownContext},Cake.Core.ITaskTeardownContext)">
+        <member name="M:Cake.Core.DefaultExecutionStrategy.PerformTaskTeardown(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext},Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext)">
             <summary>
             Performs the specified teardown action after each task is invoked.
             </summary>
             <param name="action">The action.</param>
-            <param name="taskTeardownContext">The context.</param>
+            <param name="context">The context.</param>
+            <param name="teardownContext">The teardown context.</param>
         </member>
         <member name="T:Cake.Core.Diagnostics.ICakeLog">
             <summary>
@@ -1471,61 +1319,6 @@
         <member name="F:Cake.Core.Diagnostics.Verbosity.Diagnostic">
             <summary>
             Diagnostic verbosity.
-            </summary>
-        </member>
-        <member name="T:Cake.Core.CakePlatformExtensions">
-            <summary>
-            Contains extension methods for <see cref="T:Cake.Core.ICakePlatform"/>.
-            </summary>
-        </member>
-        <member name="M:Cake.Core.CakePlatformExtensions.IsUnix(Cake.Core.ICakePlatform)">
-            <summary>
-            Determines whether the specified platform is a Unix platform.
-            </summary>
-            <param name="platform">The platform.</param>
-            <returns><c>true</c> if the platform is a Unix platform; otherwise <c>false</c>.</returns>
-        </member>
-        <member name="T:Cake.Core.ITeardownContext">
-            <summary>
-            Acts as a context providing info about the overall build following its completion
-            </summary>
-        </member>
-        <member name="P:Cake.Core.ITeardownContext.Successful">
-            <summary>
-            Gets a value indicating whether this build was successful
-            </summary>
-            <value>
-            <c>true</c> if successful; otherwise <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Core.ITeardownContext.ThrownException">
-            <summary>
-            Gets the exception that was thrown by the target.
-            </summary>
-        </member>
-        <member name="T:Cake.Core.PlatformFamily">
-            <summary>
-            Represents a platform family.
-            </summary>
-        </member>
-        <member name="F:Cake.Core.PlatformFamily.Unknown">
-            <summary>
-            The platform family is unknown.
-            </summary>
-        </member>
-        <member name="F:Cake.Core.PlatformFamily.Windows">
-            <summary>
-            Represents the Windows platform family.
-            </summary>
-        </member>
-        <member name="F:Cake.Core.PlatformFamily.Linux">
-            <summary>
-            Represents the Linux platform family.
-            </summary>
-        </member>
-        <member name="F:Cake.Core.PlatformFamily.OSX">
-            <summary>
-            Represents the OSX platform family.
             </summary>
         </member>
         <member name="T:Cake.Core.ConsoleExtensions">
@@ -2412,12 +2205,30 @@
             Represents the environment Cake operates in.
             </summary>
         </member>
+        <member name="M:Cake.Core.ICakeEnvironment.Is64BitOperativeSystem">
+            <summary>
+            Gets whether or not the current operative system is 64 bit.
+            </summary>
+            <returns>Whether or not the current operative system is 64 bit.</returns>
+        </member>
+        <member name="M:Cake.Core.ICakeEnvironment.IsUnix">
+            <summary>
+            Determines whether the current machine is running Unix.
+            </summary>
+            <returns>Whether or not the current machine is running Unix.</returns>
+        </member>
         <member name="M:Cake.Core.ICakeEnvironment.GetSpecialPath(Cake.Core.IO.SpecialPath)">
             <summary>
             Gets a special path.
             </summary>
             <param name="path">The path.</param>
             <returns>A <see cref="T:Cake.Core.IO.DirectoryPath"/> to the special path.</returns>
+        </member>
+        <member name="M:Cake.Core.ICakeEnvironment.GetApplicationRoot">
+            <summary>
+            Gets the application root path.
+            </summary>
+            <returns>The application root path.</returns>
         </member>
         <member name="M:Cake.Core.ICakeEnvironment.GetEnvironmentVariable(System.String)">
             <summary>
@@ -2432,24 +2243,6 @@
             </summary>
             <returns>The environment variables as IDictionary&lt;string, string&gt; </returns>
         </member>
-        <member name="M:Cake.Core.ICakeEnvironment.Is64BitOperativeSystem">
-            <summary>
-            Gets whether or not the current operative system is 64 bit.
-            </summary>
-            <returns>Whether or not the current operative system is 64 bit.</returns>
-        </member>
-        <member name="M:Cake.Core.ICakeEnvironment.IsUnix">
-            <summary>
-            Determines whether the current machine is running Unix.
-            </summary>
-            <returns>Whether or not the current machine is running Unix.</returns>
-        </member>
-        <member name="M:Cake.Core.ICakeEnvironment.GetApplicationRoot">
-            <summary>
-            Gets the application root path.
-            </summary>
-            <returns>The application root path.</returns>
-        </member>
         <member name="M:Cake.Core.ICakeEnvironment.GetTargetFramework">
             <summary>
             Gets the target .Net framework version that the current AppDomain is targeting.
@@ -2462,54 +2255,10 @@
             </summary>
             <value>The working directory.</value>
         </member>
-        <member name="P:Cake.Core.ICakeEnvironment.ApplicationRoot">
-            <summary>
-            Gets the application root path.
-            </summary>
-            <value>The application root path.</value>
-        </member>
-        <member name="P:Cake.Core.ICakeEnvironment.Platform">
-            <summary>
-            Gets the platform Cake is running on.
-            </summary>
-            <value>The platform Cake is running on.</value>
-        </member>
-        <member name="P:Cake.Core.ICakeEnvironment.Runtime">
-            <summary>
-            Gets the runtime Cake is running in.
-            </summary>
-            <value>The runtime Cake is running in.</value>
-        </member>
-        <member name="M:Cake.Core.CakeEnvironment.#ctor(Cake.Core.ICakePlatform,Cake.Core.ICakeRuntime)">
+        <member name="M:Cake.Core.CakeEnvironment.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Core.CakeEnvironment"/> class.
             </summary>
-            <param name="platform">The platform.</param>
-            <param name="runtime">The runtime.</param>
-        </member>
-        <member name="M:Cake.Core.CakeEnvironment.GetSpecialPath(Cake.Core.IO.SpecialPath)">
-            <summary>
-            Gets a special path.
-            </summary>
-            <param name="path">The path.</param>
-            <returns>
-            A <see cref="T:Cake.Core.IO.DirectoryPath"/> to the special path.
-            </returns>
-        </member>
-        <member name="M:Cake.Core.CakeEnvironment.GetEnvironmentVariable(System.String)">
-            <summary>
-            Gets an environment variable.
-            </summary>
-            <param name="variable">The variable.</param>
-            <returns>
-            The value of the environment variable.
-            </returns>
-        </member>
-        <member name="M:Cake.Core.CakeEnvironment.GetEnvironmentVariables">
-            <summary>
-            Gets all environment variables.
-            </summary>
-            <returns>The environment variables as IDictionary&lt;string, string&gt; </returns>
         </member>
         <member name="M:Cake.Core.CakeEnvironment.Is64BitOperativeSystem">
             <summary>
@@ -2527,6 +2276,15 @@
             Whether or not the current machine is running Unix.
             </returns>
         </member>
+        <member name="M:Cake.Core.CakeEnvironment.GetSpecialPath(Cake.Core.IO.SpecialPath)">
+            <summary>
+            Gets a special path.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            A <see cref="T:Cake.Core.IO.DirectoryPath"/> to the special path.
+            </returns>
+        </member>
         <member name="M:Cake.Core.CakeEnvironment.GetApplicationRoot">
             <summary>
             Gets the application root path.
@@ -2534,6 +2292,21 @@
             <returns>
             The application root path.
             </returns>
+        </member>
+        <member name="M:Cake.Core.CakeEnvironment.GetEnvironmentVariable(System.String)">
+            <summary>
+            Gets an environment variable.
+            </summary>
+            <param name="variable">The variable.</param>
+            <returns>
+            The value of the environment variable.
+            </returns>
+        </member>
+        <member name="M:Cake.Core.CakeEnvironment.GetEnvironmentVariables">
+            <summary>
+            Gets all environment variables.
+            </summary>
+            <returns>The environment variables as IDictionary&lt;string, string&gt; </returns>
         </member>
         <member name="M:Cake.Core.CakeEnvironment.GetTargetFramework">
             <summary>
@@ -2546,24 +2319,6 @@
             Gets or sets the working directory.
             </summary>
             <value>The working directory.</value>
-        </member>
-        <member name="P:Cake.Core.CakeEnvironment.ApplicationRoot">
-            <summary>
-            Gets the application root path.
-            </summary>
-            <value>The application root path.</value>
-        </member>
-        <member name="P:Cake.Core.CakeEnvironment.Platform">
-            <summary>
-            Gets the platform Cake is running on.
-            </summary>
-            <value>The platform Cake is running on.</value>
-        </member>
-        <member name="P:Cake.Core.CakeEnvironment.Runtime">
-            <summary>
-            Gets the runtime Cake is running in.
-            </summary>
-            <value>The runtime Cake is running in.</value>
         </member>
         <member name="T:Cake.Core.IO.IDirectory">
             <summary>
@@ -2850,19 +2605,6 @@
             Determines whether the current machine is running Unix.
             </summary>
             <returns>Whether or not the current machine is running Unix.</returns>
-        </member>
-        <member name="M:Cake.Core.IO.Machine.IsUnix(Cake.Core.PlatformFamily)">
-            <summary>
-            Determines whether the current machine is running Unix.
-            </summary>
-            <param name="family">The platform family.</param>
-            <returns>Whether or not the current machine is running Unix.</returns>
-        </member>
-        <member name="M:Cake.Core.IO.Machine.GetPlatformFamily">
-            <summary>
-            Gets the platform family.
-            </summary>
-            <returns>The platform family.</returns>
         </member>
         <member name="T:Cake.Core.IO.NuGet.INuGetToolResolver">
             <summary>
@@ -3227,7 +2969,7 @@
         </member>
         <member name="P:Cake.Core.IO.ProcessSettings.Timeout">
             <summary>
-            Gets or sets optional timeout, in milliseconds, to wait for the associated process to exit. The maximum is the largest possible value of a 32-bit integer, which represents infinity to the operating system.
+            Gets or sets optional timeout for process execution
             </summary>
         </member>
         <member name="P:Cake.Core.IO.ProcessSettings.Silent">
@@ -3237,22 +2979,6 @@
             <value>
               <c>true</c> if process output will be suppressed; otherwise, <c>false</c>.
             </value>
-        </member>
-        <member name="P:Cake.Core.IO.ProcessSettings.EnvironmentVariables">
-            <summary>
-            Gets or sets search paths for files, directories for temporary files, application-specific options, and other similar information.
-            </summary>
-            <example>
-            <code>
-            StartProcess("cmd", new ProcessSettings{
-                    Arguments = "/c set",
-                    EnvironmentVariables = new Dictionary&lt;string, string&gt;{
-                        { "CI", "True" },
-                        { "TEMP", MakeAbsolute(Directory("./Temp")).FullPath }
-                    }
-                }); 
-            </code>
-            </example>
         </member>
         <member name="T:Cake.Core.IO.Arguments.QuotedArgument">
             <summary>
@@ -3672,7 +3398,7 @@
         </member>
         <member name="T:Cake.Core.Scripting.Analysis.IScriptAnalyzer">
             <summary>
-            Represents the script analyzer responsible for
+            Represents the script analyzer responsible for 
             parsing and analyzing scripts.
             </summary>
         </member>
@@ -3931,7 +3657,7 @@
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.Scripting.IScriptHost.Teardown(System.Action{Cake.Core.ITeardownContext})">
+        <member name="M:Cake.Core.Scripting.IScriptHost.Teardown(System.Action{Cake.Core.ICakeContext})">
             <summary>
             Allows registration of an action that's executed after all other tasks have been run.
             If a setup action or a task fails with or without recovery, the specified teardown action will still be executed.
@@ -3945,21 +3671,7 @@
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.Scripting.IScriptHost.TaskSetup(System.Action{Cake.Core.ITaskSetupContext})">
-            <summary>
-            Allows registration of an action that's executed before each task is run.
-            If the task setup fails, its task will not be executed but the task teardown will be performed.
-            </summary>
-            <param name="action">The action to be executed.</param>
-        </member>
         <member name="M:Cake.Core.Scripting.IScriptHost.TaskTeardown(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext})">
-            <summary>
-            Allows registration of an action that's executed after each task has been run.
-            If a task setup action or a task fails with or without recovery, the specified task teardown action will still be executed.
-            </summary>
-            <param name="action">The action to be executed.</param>
-        </member>
-        <member name="M:Cake.Core.Scripting.IScriptHost.TaskTeardown(System.Action{Cake.Core.ITaskTeardownContext})">
             <summary>
             Allows registration of an action that's executed after each task has been run.
             If a task setup action or a task fails with or without recovery, the specified task teardown action will still be executed.
@@ -4296,7 +4008,7 @@
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.Scripting.ScriptHost.Teardown(System.Action{Cake.Core.ITeardownContext})">
+        <member name="M:Cake.Core.Scripting.ScriptHost.Teardown(System.Action{Cake.Core.ICakeContext})">
             <summary>
             Allows registration of an action that's executed after all other tasks have been run.
             If a setup action or a task fails with or without recovery, the specified teardown action will still be executed.
@@ -4317,21 +4029,7 @@
             </summary>
             <param name="action">The action to be executed.</param>
         </member>
-        <member name="M:Cake.Core.Scripting.ScriptHost.TaskSetup(System.Action{Cake.Core.ITaskSetupContext})">
-            <summary>
-            Allows registration of an action that's executed before each task is run.
-            If the task setup fails, its task will not be executed but the task teardown will be performed.
-            </summary>
-            <param name="action">The action to be executed.</param>
-        </member>
         <member name="M:Cake.Core.Scripting.ScriptHost.TaskTeardown(System.Action{Cake.Core.ICakeContext,Cake.Core.ITaskTeardownContext})">
-            <summary>
-            Allows registration of an action that's executed after each task has been run.
-            If a task setup action or a task fails with or without recovery, the specified task teardown action will still be executed.
-            </summary>
-            <param name="action">The action to be executed.</param>
-        </member>
-        <member name="M:Cake.Core.Scripting.ScriptHost.TaskTeardown(System.Action{Cake.Core.ITaskTeardownContext})">
             <summary>
             Allows registration of an action that's executed after each task has been run.
             If a task setup action or a task fails with or without recovery, the specified task teardown action will still be executed.
@@ -4424,11 +4122,10 @@
             Acts as a context providing info about a <see cref="T:Cake.Core.CakeTask"/> before its invocation.
             </summary>
         </member>
-        <member name="M:Cake.Core.TaskSetupContext.#ctor(Cake.Core.ICakeContext,Cake.Core.ICakeTaskInfo)">
+        <member name="M:Cake.Core.TaskSetupContext.#ctor(Cake.Core.ICakeTaskInfo)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Core.TaskSetupContext"/> class.
             </summary>
-            <param name="context">The Cake Context.</param>
             <param name="task">The task.</param>
         </member>
         <member name="P:Cake.Core.TaskSetupContext.Task">
@@ -4444,11 +4141,10 @@
             Acts as a context providing info about a <see cref="T:Cake.Core.ICakeTaskInfo"/> following its invocation.
             </summary>
         </member>
-        <member name="M:Cake.Core.TaskTeardownContext.#ctor(Cake.Core.ICakeContext,Cake.Core.ICakeTaskInfo,System.TimeSpan,System.Boolean)">
+        <member name="M:Cake.Core.TaskTeardownContext.#ctor(Cake.Core.ICakeTaskInfo,System.TimeSpan,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Cake.Core.TaskTeardownContext"/> class.
             </summary>
-            <param name="context">The Cake Context.</param>
             <param name="task">The task.</param>
             <param name="duration">The duration of the task.</param>
             <param name="skipped">if set to <c>true</c>, the task was not executed.</param>
@@ -4476,31 +4172,6 @@
             <value>
             <c>true</c> if skipped; otherwise, <c>false</c>.
             </value>
-        </member>
-        <member name="T:Cake.Core.TeardownContext">
-            <summary>
-            Acts as a context providing info about the overall build following its completion
-            </summary>
-        </member>
-        <member name="M:Cake.Core.TeardownContext.#ctor(Cake.Core.ICakeContext,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cake.Core.TeardownContext"/> class.
-            </summary>
-            <param name="context">The Cake Context</param>
-            <param name="throwException">The exception that was thrown by the target.</param>
-        </member>
-        <member name="P:Cake.Core.TeardownContext.Successful">
-            <summary>
-            Gets a value indicating whether this build was successful
-            </summary>
-            <value>
-            <c>true</c> if successful; otherwise <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Cake.Core.TeardownContext.ThrownException">
-            <summary>
-            Gets the exception that was thrown by the target.
-            </summary>
         </member>
         <member name="T:Cake.Core.Text.ITextTransformationTemplate">
             <summary>
@@ -4640,13 +4311,6 @@
             <param name="processSettings">The process settings</param>
             <param name="postAction">If specified called after process exit</param>
         </member>
-        <member name="M:Cake.Core.Tooling.Tool`1.ProcessExitCode(System.Int32)">
-            <summary>
-            Customized exit code handling.
-            Standard behavior is to fail when non zero.
-            </summary>
-            <param name="exitCode">The process exit code</param>
-        </member>
         <member name="M:Cake.Core.Tooling.Tool`1.RunProcess(`0,Cake.Core.IO.ProcessArgumentBuilder)">
             <summary>
             Runs the tool using a custom tool path and the specified settings.
@@ -4690,13 +4354,6 @@
             </summary>
             <param name="settings">The settings.</param>
             <returns>The default tool path.</returns>
-        </member>
-        <member name="M:Cake.Core.Tooling.Tool`1.GetEnvironmentVariables(`0)">
-            <summary>
-            Gets the environment variables.
-            </summary>
-            <param name="settings">The settings.</param>
-            <returns>The environment variables for the tool.</returns>
         </member>
         <member name="T:Cake.Core.Tooling.ToolRepository">
             <summary>
@@ -4790,12 +4447,6 @@
             Gets or sets optional timeout for tool execution.
             </summary>
         </member>
-        <member name="P:Cake.Core.Tooling.ToolSettings.WorkingDirectory">
-            <summary>
-            Gets or sets the working directory for the tool process.
-            </summary>
-            <value>The working directory for the tool process.</value>
-        </member>
         <member name="P:Cake.Core.Tooling.ToolSettings.ArgumentCustomization">
             <summary>
             Gets or sets the argument customization.
@@ -4803,7 +4454,6 @@
             This allows you to support new tool arguments, customize arguments or address potential argument issues.
             </summary>
             <example>
-            <para>Combining tool specific settings and tool arguments:</para>
             <code>
             NuGetAddSource("Cake", "https://www.myget.org/F/cake/api/v3/index.json",
                 new NuGetSourcesSettings { UserName = "user", Password = "incorrect",
@@ -4811,28 +4461,7 @@
             });
             </code>
             </example>
-            <example>
-            <para>Setting multiple tool arguments:</para>
-            <code>
-            MSTest(pathPattern, new MSTestSettings() 
-                { ArgumentCustomization = args=&gt;args.Append("/detail:errormessage")
-                                                       .Append("/resultsfile:TestResults.trx") });
-            </code>
-            </example>
             <value>The delegate used to customize the <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/>.</value>
-        </member>
-        <member name="P:Cake.Core.Tooling.ToolSettings.EnvironmentVariables">
-            <summary>
-            Gets or sets search paths for files, directories for temporary files, application-specific options, and other similar information.
-            </summary>
-            <example>
-            <code>
-            MSBuild("./src/Cake.sln", new MSBuildSettings {
-                EnvironmentVariables = new Dictionary&lt;string, string&gt;{
-                    { "TOOLSPATH", MakeAbsolute(Directory("./tools")).FullPath }
-                }});
-            </code>
-            </example>
         </member>
         <member name="T:Cake.Core.Utilities.Tool`1">
             <summary>
