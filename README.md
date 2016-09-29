@@ -6,3 +6,5 @@ Intended to be a simple geographic library for .NET applications.
 
 Currently only supports encoding/decoding [Google polyline format](https://developers.google.com/maps/documentation/utilities/polylinealgorithm) and polyline reduction.
 
+Feature requests are welcome. Please post as new issue.
+
