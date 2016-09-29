@@ -17,9 +17,11 @@ namespace SharpGeo.Tests
             var points = new List<IPoint>();
             using (var stream = TestHelper.GetResourceStream("GooglePolyline.txt"))
             {
-                var reader = new StreamReader(stream);
-                var decodedPoints = PolylineEncoder.Decode(reader.ReadToEnd());
-                points = (from p in decodedPoints select p as IPoint).ToList();
+                using (var reader = new StreamReader(stream))
+                {
+                    var decodedPoints = PolylineEncoder.Decode(reader.ReadToEnd());
+                    points = (from p in decodedPoints select p as IPoint).ToList();
+                }
             }
             Assert.NotNull(points);
 
