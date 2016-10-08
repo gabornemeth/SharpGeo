@@ -17,4 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)PositionTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestHelper.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\SamplePolyline1.json" />
+  </ItemGroup>
 </Project>

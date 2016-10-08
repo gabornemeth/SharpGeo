@@ -26,5 +26,16 @@ namespace SharpGeo.Tests
 
             return null;
         }
+
+        public static string ReadFromResource(string resourceName)
+        {
+            using (var stream = TestHelper.GetResourceStream(resourceName))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+        }
     }
 }
