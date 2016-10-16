@@ -1,5 +1,4 @@
 ﻿using System;
-//using Newtonsoft.Json;
 
 namespace SharpGeo
 {
@@ -9,15 +8,14 @@ namespace SharpGeo
     public struct Point2 : IPoint
     {
         /// <summary>
-        /// Longitude in degrees
+        /// Horizontal position
         /// </summary>
         public float X { get; set; }
         /// <summary>
-        /// Latitude in degrees
+        /// Vertical position
         /// </summary>
         public float Y { get; set; }
 
-        //[JsonIgnore]
         public bool IsEmpty
         {
             get
@@ -37,10 +35,10 @@ namespace SharpGeo
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Point3"/> 
+        /// Initializes a new instance of <see cref="Point2"/> 
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
+        /// <param name="x">x coordinate</param>
+        /// <param name="y">y coordinate</param>
         public Point2(float x, float y) : this()
         {
             X = x;
@@ -64,7 +62,7 @@ namespace SharpGeo
         }
 
         /// <summary>
-        /// Distance from a position in degrees
+        /// Distance from a point
         /// </summary>
         /// <param name="pos"></param>
         /// <returns></returns>

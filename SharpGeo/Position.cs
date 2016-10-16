@@ -1,5 +1,4 @@
 ﻿using System;
-//using Newtonsoft.Json;
 
 namespace SharpGeo
 {
@@ -21,7 +20,6 @@ namespace SharpGeo
         /// </summary>
         public float Altitude { get; set; }
 
-        //[JsonIgnore]
         public bool IsEmpty
         {
             get
