@@ -1,6 +1,6 @@
 # SharpGeo
 
-![Build status](https://gabornemeth.visualstudio.com/_apis/public/build/definitions/e17374f6-8d0c-4d59-9174-38fd82d5da0d/6/badge)
+[![Build Status](https://www.bitrise.io/app/921b220b4461d6d1.svg?token=N9H3fMH3zJkYtr6CRmv7Uw&branch=master)](https://www.bitrise.io/app/921b220b4461d6d1)
 
 Intended to be a simple geographic library for .NET applications.
 
