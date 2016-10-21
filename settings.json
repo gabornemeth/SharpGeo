@@ -8,7 +8,7 @@
 	},
 	"build": {
 		"SourcePath": "./",
-		"SolutionFileSpec": "./*.sln",
+		"SolutionFileSpec": "./src/*.sln",
 		"TreatWarningsAsErrors": false,
 		"NugetConfigPath": "./.nuget/NuGet.Config",
 		"EnableXamarinIOS": false,
@@ -21,7 +21,7 @@
 		"FeedUrl": "https://www.nuget.org",
 		"FeedAPIKey": "",
 		"ArtifactsPath": "./artifacts/packages",
-		"NuspecPath": ".",
+		"NuspecPath": "./nuspec",
 		"UpdateVersion": true,
 		"VersionDependencyForLibrary": "exact"
 	}

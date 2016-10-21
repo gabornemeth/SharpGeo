@@ -90,9 +90,9 @@ Task("CleanPackages")
     // Clean solution directories.
     foreach(var path in solutionPaths)
     {
-        Information("Cleaning {0}", path);
-		CleanDirectories(path + "/packages/**/*");
-		CleanDirectories(path + "/packages");
+      Information("Cleaning {0}", path);
+			CleanDirectories(path + "/packages/**/*");
+			CleanDirectories(path + "/packages");
     }
 });
 
@@ -191,10 +191,11 @@ Task("Package")
 
 		NuGetPack(nsf, new NuGetPackSettings {
 			Version = versionInfo.ToString(),
-			ReleaseNotes = versionInfo.ReleaseNotes,
+			//ReleaseNotes = versionInfo.ReleaseNotes,
 			Symbols = true,
 			Properties = nugetProps,
-			OutputDirectory = artifactsPath
+			OutputDirectory = artifactsPath,
+			ArgumentCustomization = args => args.Append("-NoDefaultExcludes")
 		});
 	}
 });
@@ -229,7 +230,6 @@ Task("Publish")
 		NuGetPush(pkg, nugetSettings);
 	}
 });
-
 
 Task("UnPublish")
     .Description("UnPublishes all of the current nupkg packages from the nuget server. Issue: versionToDelete must use : instead of . due to bug in cake")

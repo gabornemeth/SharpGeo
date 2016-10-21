@@ -11,7 +11,15 @@ public class SettingsUtils
 			return null;
 		}
 
-		var obj = context.DeserializeJsonFromFile<Settings>(settingsFile);
+		var settings = context.DeserializeJsonFromFile<Settings>(settingsFile);
+
+		var envFeedUrl = context.EnvironmentVariable("NUGET_FEED_URL");
+		if (!string.IsNullOrEmpty(envFeedUrl))
+			settings.NuGet.FeedUrl = envFeedUrl;
+
+		var envFeedApiKey = context.EnvironmentVariable("NUGET_FEED_APIKEY");
+		if (!string.IsNullOrEmpty(envFeedApiKey))
+			settings.NuGet.FeedApiKey = envFeedApiKey;
 
 		return obj;
 	}
