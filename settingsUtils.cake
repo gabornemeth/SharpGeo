@@ -21,7 +21,7 @@ public class SettingsUtils
 		if (!string.IsNullOrEmpty(envFeedApiKey))
 			settings.NuGet.FeedApiKey = envFeedApiKey;
 
-		return obj;
+		return settings;
 	}
 }
 
