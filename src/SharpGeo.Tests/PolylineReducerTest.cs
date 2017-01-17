@@ -14,7 +14,7 @@ namespace SharpGeo.Tests
     public class PolylineReducerTest
     {
         [Test]
-        [Ignore("Temporarily ignored")]
+        //[Ignore("Temporarily ignored")]
         public void Reduce()
         {
             var points = new List<IPoint>();
