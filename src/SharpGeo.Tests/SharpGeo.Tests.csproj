@@ -7,8 +7,8 @@
     <ProjectGuid>{B06E2E9C-FEB2-48DB-AB7E-623092598BA2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpGeo.Tests.NET45</RootNamespace>
-    <AssemblyName>SharpGeo.Tests.NET45</AssemblyName>
+    <RootNamespace>SharpGeo.Tests</RootNamespace>
+    <AssemblyName>SharpGeo.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -82,21 +82,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PolylineEncodingTest.cs" />
+    <Compile Include="PolylineReducerTest.cs" />
+    <Compile Include="PositionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SharpGeo\SharpGeo.csproj">
-      <Project>{80d3699e-2ba5-4d40-94be-88d5c3106c44}</Project>
-      <Name>SharpGeo</Name>
-    </ProjectReference>
+    <Compile Include="TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\SamplePolyline1.json" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <Import Project="..\SharpGeo.Tests\SharpGeo.Tests.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\SharpGeo\SharpGeo.csproj">
+      <Project>{d905d342-cfdb-4845-aef2-f1ff7a8b33b1}</Project>
+      <Name>SharpGeo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GooglePolyline.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
